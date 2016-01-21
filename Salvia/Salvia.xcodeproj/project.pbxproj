@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */; };
+		1B70FB4D1C507A3800DD24EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB4C1C507A3800DD24EA /* ViewController.swift */; };
+		1B70FB501C507A3800DD24EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B70FB4E1C507A3800DD24EA /* Main.storyboard */; };
+		1B70FB531C507A3800DD24EA /* Salvia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB511C507A3800DD24EA /* Salvia.xcdatamodeld */; };
+		1B70FB551C507A3800DD24EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B70FB541C507A3800DD24EA /* Assets.xcassets */; };
+		1B70FB581C507A3800DD24EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B70FB561C507A3800DD24EA /* LaunchScreen.storyboard */; };
+		1B70FB631C507A3800DD24EA /* SalviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB621C507A3800DD24EA /* SalviaTests.swift */; };
+		1B70FB6E1C507A3800DD24EA /* SalviaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB6D1C507A3800DD24EA /* SalviaUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B70FB5F1C507A3800DD24EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B70FB3F1C507A3800DD24EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B70FB461C507A3800DD24EA;
+			remoteInfo = Salvia;
+		};
+		1B70FB6A1C507A3800DD24EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B70FB3F1C507A3800DD24EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B70FB461C507A3800DD24EA;
+			remoteInfo = Salvia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B70FB471C507A3800DD24EA /* Salvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1B70FB4C1C507A3800DD24EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B70FB4F1C507A3800DD24EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B70FB521C507A3800DD24EA /* Salvia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Salvia.xcdatamodel; sourceTree = "<group>"; };
+		1B70FB541C507A3800DD24EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1B70FB571C507A3800DD24EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1B70FB591C507A3800DD24EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B70FB5E1C507A3800DD24EA /* SalviaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B70FB621C507A3800DD24EA /* SalviaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalviaTests.swift; sourceTree = "<group>"; };
+		1B70FB641C507A3800DD24EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B70FB691C507A3800DD24EA /* SalviaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalviaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B70FB6D1C507A3800DD24EA /* SalviaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalviaUITests.swift; sourceTree = "<group>"; };
+		1B70FB6F1C507A3800DD24EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1B70FB441C507A3800DD24EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B70FB5B1C507A3800DD24EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B70FB661C507A3800DD24EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B70FB3E1C507A3800DD24EA = {
+			isa = PBXGroup;
+			children = (
+				1B70FB491C507A3800DD24EA /* Salvia */,
+				1B70FB611C507A3800DD24EA /* SalviaTests */,
+				1B70FB6C1C507A3800DD24EA /* SalviaUITests */,
+				1B70FB481C507A3800DD24EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1B70FB481C507A3800DD24EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1B70FB471C507A3800DD24EA /* Salvia.app */,
+				1B70FB5E1C507A3800DD24EA /* SalviaTests.xctest */,
+				1B70FB691C507A3800DD24EA /* SalviaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1B70FB491C507A3800DD24EA /* Salvia */ = {
+			isa = PBXGroup;
+			children = (
+				1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */,
+				1B70FB4C1C507A3800DD24EA /* ViewController.swift */,
+				1B70FB4E1C507A3800DD24EA /* Main.storyboard */,
+				1B70FB541C507A3800DD24EA /* Assets.xcassets */,
+				1B70FB561C507A3800DD24EA /* LaunchScreen.storyboard */,
+				1B70FB591C507A3800DD24EA /* Info.plist */,
+				1B70FB511C507A3800DD24EA /* Salvia.xcdatamodeld */,
+			);
+			path = Salvia;
+			sourceTree = "<group>";
+		};
+		1B70FB611C507A3800DD24EA /* SalviaTests */ = {
+			isa = PBXGroup;
+			children = (
+				1B70FB621C507A3800DD24EA /* SalviaTests.swift */,
+				1B70FB641C507A3800DD24EA /* Info.plist */,
+			);
+			path = SalviaTests;
+			sourceTree = "<group>";
+		};
+		1B70FB6C1C507A3800DD24EA /* SalviaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1B70FB6D1C507A3800DD24EA /* SalviaUITests.swift */,
+				1B70FB6F1C507A3800DD24EA /* Info.plist */,
+			);
+			path = SalviaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1B70FB461C507A3800DD24EA /* Salvia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B70FB721C507A3800DD24EA /* Build configuration list for PBXNativeTarget "Salvia" */;
+			buildPhases = (
+				1B70FB431C507A3800DD24EA /* Sources */,
+				1B70FB441C507A3800DD24EA /* Frameworks */,
+				1B70FB451C507A3800DD24EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Salvia;
+			productName = Salvia;
+			productReference = 1B70FB471C507A3800DD24EA /* Salvia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1B70FB5D1C507A3800DD24EA /* SalviaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B70FB751C507A3800DD24EA /* Build configuration list for PBXNativeTarget "SalviaTests" */;
+			buildPhases = (
+				1B70FB5A1C507A3800DD24EA /* Sources */,
+				1B70FB5B1C507A3800DD24EA /* Frameworks */,
+				1B70FB5C1C507A3800DD24EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B70FB601C507A3800DD24EA /* PBXTargetDependency */,
+			);
+			name = SalviaTests;
+			productName = SalviaTests;
+			productReference = 1B70FB5E1C507A3800DD24EA /* SalviaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1B70FB681C507A3800DD24EA /* SalviaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B70FB781C507A3800DD24EA /* Build configuration list for PBXNativeTarget "SalviaUITests" */;
+			buildPhases = (
+				1B70FB651C507A3800DD24EA /* Sources */,
+				1B70FB661C507A3800DD24EA /* Frameworks */,
+				1B70FB671C507A3800DD24EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1B70FB6B1C507A3800DD24EA /* PBXTargetDependency */,
+			);
+			name = SalviaUITests;
+			productName = SalviaUITests;
+			productReference = 1B70FB691C507A3800DD24EA /* SalviaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1B70FB3F1C507A3800DD24EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "gwendolyn weston";
+				TargetAttributes = {
+					1B70FB461C507A3800DD24EA = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					1B70FB5D1C507A3800DD24EA = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 1B70FB461C507A3800DD24EA;
+					};
+					1B70FB681C507A3800DD24EA = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 1B70FB461C507A3800DD24EA;
+					};
+				};
+			};
+			buildConfigurationList = 1B70FB421C507A3800DD24EA /* Build configuration list for PBXProject "Salvia" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1B70FB3E1C507A3800DD24EA;
+			productRefGroup = 1B70FB481C507A3800DD24EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1B70FB461C507A3800DD24EA /* Salvia */,
+				1B70FB5D1C507A3800DD24EA /* SalviaTests */,
+				1B70FB681C507A3800DD24EA /* SalviaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1B70FB451C507A3800DD24EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B70FB581C507A3800DD24EA /* LaunchScreen.storyboard in Resources */,
+				1B70FB551C507A3800DD24EA /* Assets.xcassets in Resources */,
+				1B70FB501C507A3800DD24EA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B70FB5C1C507A3800DD24EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B70FB671C507A3800DD24EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1B70FB431C507A3800DD24EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B70FB531C507A3800DD24EA /* Salvia.xcdatamodeld in Sources */,
+				1B70FB4D1C507A3800DD24EA /* ViewController.swift in Sources */,
+				1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B70FB5A1C507A3800DD24EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B70FB631C507A3800DD24EA /* SalviaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B70FB651C507A3800DD24EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B70FB6E1C507A3800DD24EA /* SalviaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B70FB601C507A3800DD24EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B70FB461C507A3800DD24EA /* Salvia */;
+			targetProxy = 1B70FB5F1C507A3800DD24EA /* PBXContainerItemProxy */;
+		};
+		1B70FB6B1C507A3800DD24EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B70FB461C507A3800DD24EA /* Salvia */;
+			targetProxy = 1B70FB6A1C507A3800DD24EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1B70FB4E1C507A3800DD24EA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B70FB4F1C507A3800DD24EA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1B70FB561C507A3800DD24EA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B70FB571C507A3800DD24EA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1B70FB701C507A3800DD24EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1B70FB711C507A3800DD24EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1B70FB731C507A3800DD24EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Salvia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glw.Salvia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1B70FB741C507A3800DD24EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Salvia/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glw.Salvia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1B70FB761C507A3800DD24EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SalviaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glw.SalviaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Salvia.app/Salvia";
+			};
+			name = Debug;
+		};
+		1B70FB771C507A3800DD24EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SalviaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glw.SalviaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Salvia.app/Salvia";
+			};
+			name = Release;
+		};
+		1B70FB791C507A3800DD24EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SalviaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glw.SalviaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Salvia;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1B70FB7A1C507A3800DD24EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SalviaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.glw.SalviaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Salvia;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1B70FB421C507A3800DD24EA /* Build configuration list for PBXProject "Salvia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B70FB701C507A3800DD24EA /* Debug */,
+				1B70FB711C507A3800DD24EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B70FB721C507A3800DD24EA /* Build configuration list for PBXNativeTarget "Salvia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B70FB731C507A3800DD24EA /* Debug */,
+				1B70FB741C507A3800DD24EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1B70FB751C507A3800DD24EA /* Build configuration list for PBXNativeTarget "SalviaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B70FB761C507A3800DD24EA /* Debug */,
+				1B70FB771C507A3800DD24EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1B70FB781C507A3800DD24EA /* Build configuration list for PBXNativeTarget "SalviaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B70FB791C507A3800DD24EA /* Debug */,
+				1B70FB7A1C507A3800DD24EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1B70FB511C507A3800DD24EA /* Salvia.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1B70FB521C507A3800DD24EA /* Salvia.xcdatamodel */,
+			);
+			currentVersion = 1B70FB521C507A3800DD24EA /* Salvia.xcdatamodel */;
+			path = Salvia.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1B70FB3F1C507A3800DD24EA /* Project object */;
+}
