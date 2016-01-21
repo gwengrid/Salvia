@@ -15,6 +15,7 @@
 		1B70FB581C507A3800DD24EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B70FB561C507A3800DD24EA /* LaunchScreen.storyboard */; };
 		1B70FB631C507A3800DD24EA /* SalviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB621C507A3800DD24EA /* SalviaTests.swift */; };
 		1B70FB6E1C507A3800DD24EA /* SalviaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB6D1C507A3800DD24EA /* SalviaUITests.swift */; };
+		71262AAA1C50AEC800C311F9 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71262AA91C50AEC800C311F9 /* TaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1B70FB691C507A3800DD24EA /* SalviaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalviaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B70FB6D1C507A3800DD24EA /* SalviaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalviaUITests.swift; sourceTree = "<group>"; };
 		1B70FB6F1C507A3800DD24EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71262AA91C50AEC800C311F9 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */,
 				1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */,
+				71262AA91C50AEC800C311F9 /* TaskViewController.swift */,
 				1B70FB4E1C507A3800DD24EA /* Main.storyboard */,
 				1B70FB541C507A3800DD24EA /* Assets.xcassets */,
 				1B70FB561C507A3800DD24EA /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B70FB531C507A3800DD24EA /* Salvia.xcdatamodeld in Sources */,
+				71262AAA1C50AEC800C311F9 /* TaskViewController.swift in Sources */,
 				1B70FB4D1C507A3800DD24EA /* TodayViewController.swift in Sources */,
 				1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */,
 			);
@@ -486,6 +490,7 @@
 				1B70FB741C507A3800DD24EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B70FB751C507A3800DD24EA /* Build configuration list for PBXNativeTarget "SalviaTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +499,7 @@
 				1B70FB771C507A3800DD24EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B70FB781C507A3800DD24EA /* Build configuration list for PBXNativeTarget "SalviaUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +508,7 @@
 				1B70FB7A1C507A3800DD24EA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
