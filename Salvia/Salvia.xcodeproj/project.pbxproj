@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */; };
-		1B70FB4D1C507A3800DD24EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB4C1C507A3800DD24EA /* ViewController.swift */; };
+		1B70FB4D1C507A3800DD24EA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */; };
 		1B70FB501C507A3800DD24EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B70FB4E1C507A3800DD24EA /* Main.storyboard */; };
 		1B70FB531C507A3800DD24EA /* Salvia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB511C507A3800DD24EA /* Salvia.xcdatamodeld */; };
 		1B70FB551C507A3800DD24EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B70FB541C507A3800DD24EA /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 /* Begin PBXFileReference section */
 		1B70FB471C507A3800DD24EA /* Salvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B70FB4C1C507A3800DD24EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		1B70FB4F1C507A3800DD24EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B70FB521C507A3800DD24EA /* Salvia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Salvia.xcdatamodel; sourceTree = "<group>"; };
 		1B70FB541C507A3800DD24EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */,
-				1B70FB4C1C507A3800DD24EA /* ViewController.swift */,
+				1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */,
 				1B70FB4E1C507A3800DD24EA /* Main.storyboard */,
 				1B70FB541C507A3800DD24EA /* Assets.xcassets */,
 				1B70FB561C507A3800DD24EA /* LaunchScreen.storyboard */,
@@ -260,7 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B70FB531C507A3800DD24EA /* Salvia.xcdatamodeld in Sources */,
-				1B70FB4D1C507A3800DD24EA /* ViewController.swift in Sources */,
+				1B70FB4D1C507A3800DD24EA /* TodayViewController.swift in Sources */,
 				1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
