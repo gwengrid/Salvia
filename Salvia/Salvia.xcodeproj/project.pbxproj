@@ -50,6 +50,7 @@
 		1B70FB691C507A3800DD24EA /* SalviaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalviaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B70FB6D1C507A3800DD24EA /* SalviaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalviaUITests.swift; sourceTree = "<group>"; };
 		1B70FB6F1C507A3800DD24EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B70FB7B1C51E24200DD24EA /* Salvia-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Salvia-Bridging-Header.h"; sourceTree = "<group>"; };
 		71262AA91C50AEC800C311F9 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +86,7 @@
 				1B70FB611C507A3800DD24EA /* SalviaTests */,
 				1B70FB6C1C507A3800DD24EA /* SalviaUITests */,
 				1B70FB481C507A3800DD24EA /* Products */,
+				1B70FB7B1C51E24200DD24EA /* Salvia-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -405,10 +407,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Salvia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glw.Salvia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Salvia-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -416,10 +421,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Salvia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glw.Salvia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Salvia-Bridging-Header.h";
 			};
 			name = Release;
 		};
