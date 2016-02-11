@@ -9,7 +9,7 @@
 import UIKit
 
 class TodayViewController: UIViewController {
-
+    var taskKeeper: TaskKeeper?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("present"))
