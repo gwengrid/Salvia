@@ -31,9 +31,15 @@ class NewTaskViewController: UIViewController {
         self.edgesForExtendedLayout = .None
         let views = ["topGuide": self.topLayoutGuide, "view": self.view]
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[topGuide][view]", options: [], metrics: nil, views: views as! [String : AnyObject]))
+
+        let tap = UITapGestureRecognizer(target: self, action: Selector("dismiss"))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
     }
 
-
+    func dismiss() {
+        self.taskInput.endEditing(true)
+    }
 
 }
 
