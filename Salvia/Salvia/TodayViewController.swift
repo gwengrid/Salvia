@@ -10,9 +10,13 @@ import UIKit
 
 class TodayViewController: UIViewController {
     var taskKeeper: TaskKeeper?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("present"))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("present"))
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "7 missions left", style: .Plain, target: nil, action: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,9 +25,8 @@ class TodayViewController: UIViewController {
     }
 
     func present() {
-        let storyboard = UIStoryboard(name:"Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("Task")
-        self.navigationController?.pushViewController(vc, animated: true)
+        let newTaskVC = NewTaskViewController(nibName: "NewTask", bundle: nil)
+        self.navigationController?.pushViewController(newTaskVC, animated: true)
     }
 }
 
