@@ -28,6 +28,12 @@ class NewTaskViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "New Mission Memo"
+        self.edgesForExtendedLayout = .None
+        let views = ["topGuide": self.topLayoutGuide, "view": self.view]
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[topGuide][view]", options: [], metrics: nil, views: views as! [String : AnyObject]))
     }
+
+
+
 }
 
