@@ -18,7 +18,6 @@
 		1BA23BA61C6C73C400FF9059 /* TaskKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BA51C6C73C400FF9059 /* TaskKeeper.swift */; };
 		1BA23BA81C6D16DF00FF9059 /* NewTask.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA23BA71C6D16DF00FF9059 /* NewTask.xib */; };
 		1BA23BAA1C6D191700FF9059 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BA91C6D191700FF9059 /* NewTaskViewController.swift */; };
-		71262AAA1C50AEC800C311F9 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71262AA91C50AEC800C311F9 /* TaskViewController.swift */; };
 		8F08BC224E7465361F358643 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601815A49911CC221A9AD5F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +60,6 @@
 		3601815A49911CC221A9AD5F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BEE66EF0E270BEB16A94FFB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4AEE79AC1EEF15E5E47BDDDA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		71262AA91C50AEC800C311F9 /* TaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +116,6 @@
 			children = (
 				1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */,
 				1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */,
-				71262AA91C50AEC800C311F9 /* TaskViewController.swift */,
 				1B70FB4E1C507A3800DD24EA /* Main.storyboard */,
 				1B70FB541C507A3800DD24EA /* Assets.xcassets */,
 				1B70FB561C507A3800DD24EA /* LaunchScreen.storyboard */,
@@ -350,7 +347,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B70FB531C507A3800DD24EA /* Salvia.xcdatamodeld in Sources */,
-				71262AAA1C50AEC800C311F9 /* TaskViewController.swift in Sources */,
 				1BA23BAA1C6D191700FF9059 /* NewTaskViewController.swift in Sources */,
 				1B70FB4D1C507A3800DD24EA /* TodayViewController.swift in Sources */,
 				1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */,
