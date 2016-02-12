@@ -18,6 +18,8 @@
 		1BA23BA61C6C73C400FF9059 /* TaskKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BA51C6C73C400FF9059 /* TaskKeeper.swift */; };
 		1BA23BA81C6D16DF00FF9059 /* NewTask.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA23BA71C6D16DF00FF9059 /* NewTask.xib */; };
 		1BA23BAA1C6D191700FF9059 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BA91C6D191700FF9059 /* NewTaskViewController.swift */; };
+		1BA23BB31C6D59E200FF9059 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BB11C6D59E200FF9059 /* Task+CoreDataProperties.swift */; };
+		1BA23BB41C6D59E200FF9059 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BB21C6D59E200FF9059 /* Task.swift */; };
 		8F08BC224E7465361F358643 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601815A49911CC221A9AD5F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		1BA23BA51C6C73C400FF9059 /* TaskKeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskKeeper.swift; sourceTree = "<group>"; };
 		1BA23BA71C6D16DF00FF9059 /* NewTask.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTask.xib; sourceTree = "<group>"; };
 		1BA23BA91C6D191700FF9059 /* NewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		1BA23BB11C6D59E200FF9059 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1BA23BB21C6D59E200FF9059 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		3601815A49911CC221A9AD5F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BEE66EF0E270BEB16A94FFB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4AEE79AC1EEF15E5E47BDDDA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 				1BA23BA51C6C73C400FF9059 /* TaskKeeper.swift */,
 				1BA23BA71C6D16DF00FF9059 /* NewTask.xib */,
 				1BA23BA91C6D191700FF9059 /* NewTaskViewController.swift */,
+				1BA23BB11C6D59E200FF9059 /* Task+CoreDataProperties.swift */,
+				1BA23BB21C6D59E200FF9059 /* Task.swift */,
 			);
 			path = Salvia;
 			sourceTree = "<group>";
@@ -346,9 +352,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA23BB41C6D59E200FF9059 /* Task.swift in Sources */,
 				1B70FB531C507A3800DD24EA /* Salvia.xcdatamodeld in Sources */,
 				1BA23BAA1C6D191700FF9059 /* NewTaskViewController.swift in Sources */,
 				1B70FB4D1C507A3800DD24EA /* TodayViewController.swift in Sources */,
+				1BA23BB31C6D59E200FF9059 /* Task+CoreDataProperties.swift in Sources */,
 				1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */,
 				1BA23BA61C6C73C400FF9059 /* TaskKeeper.swift in Sources */,
 			);

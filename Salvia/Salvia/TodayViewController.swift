@@ -11,22 +11,25 @@ import UIKit
 class TodayViewController: UIViewController {
     var taskKeeper: TaskKeeper?
     
+    @IBOutlet weak var todayTaskLabel: UILabel!
+    @IBOutlet weak var completionButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("present"))
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "7 missions left", style: .Plain, target: nil, action: nil)
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        let task = taskKeeper?.fetchNextInQueue()
+        todayTaskLabel.text = (task != nil) ? task!.task : "No mission today"
     }
 
     func present() {
         let newTaskVC = NewTaskViewController(nibName: "NewTask", bundle: nil)
+        newTaskVC.taskkeeper = taskKeeper
         self.navigationController?.pushViewController(newTaskVC, animated: true)
+    }
+
+    @IBAction func missionSuccess(sender: AnyObject) {
+        
     }
 }
 

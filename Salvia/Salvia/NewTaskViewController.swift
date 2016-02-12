@@ -11,10 +11,10 @@ import UIKit
 
 class NewTaskViewController: UIViewController {
     @IBOutlet weak var taskInput: UITextView!
-    @IBOutlet weak var dueDateInput: UIDatePicker!
-    
+
     @IBOutlet var subview: UIView!
-    
+    var taskkeeper: TaskKeeper!
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -41,5 +41,9 @@ class NewTaskViewController: UIViewController {
         self.taskInput.endEditing(true)
     }
 
+    @IBAction func saveNewTask(sender: AnyObject) {
+        taskkeeper.saveNewTask(self.taskInput.text)
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 }
 
