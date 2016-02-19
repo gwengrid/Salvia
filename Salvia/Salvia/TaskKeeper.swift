@@ -24,6 +24,9 @@ class TaskKeeper {
         self.db.operation { (context, save) -> Void in
             let newTask: Task = try! context.create()
             newTask.task = description
+            if let date = NSDate.today() {
+                newTask.dateCreated = date
+            }
             save()
         }
     }
@@ -40,5 +43,4 @@ class TaskKeeper {
         }
 
     }
-
 }

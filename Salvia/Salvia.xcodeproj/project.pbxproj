@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B2460A31C76A16A00BC8B78 /* Envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B2460A21C76A16A00BC8B78 /* Envelope.png */; };
 		1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */; };
 		1B70FB4D1C507A3800DD24EA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */; };
 		1B70FB501C507A3800DD24EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B70FB4E1C507A3800DD24EA /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B2460A21C76A16A00BC8B78 /* Envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Envelope.png; path = Assets/Envelope.png; sourceTree = "<group>"; };
 		1B70FB471C507A3800DD24EA /* Salvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */,
 				1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */,
 				1B70FB4E1C507A3800DD24EA /* Main.storyboard */,
+				1B2460A21C76A16A00BC8B78 /* Envelope.png */,
 				1B70FB541C507A3800DD24EA /* Assets.xcassets */,
 				1B70FB561C507A3800DD24EA /* LaunchScreen.storyboard */,
 				1B70FB591C507A3800DD24EA /* Info.plist */,
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BA23BA81C6D16DF00FF9059 /* NewTask.xib in Resources */,
+				1B2460A31C76A16A00BC8B78 /* Envelope.png in Resources */,
 				1B70FB581C507A3800DD24EA /* LaunchScreen.storyboard in Resources */,
 				1B70FB551C507A3800DD24EA /* Assets.xcassets in Resources */,
 				1B70FB501C507A3800DD24EA /* Main.storyboard in Resources */,
