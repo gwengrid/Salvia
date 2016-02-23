@@ -19,8 +19,10 @@ class TodayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("present"))
-
-        self.navigationController?.title = "Today's mission"
+        self.title = "Today's mission"
+        let backButton = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = backButton
+        
         self.envelopeView.transform = CGAffineTransformMakeTranslation(0, self.view.frame.height)
     }
 
@@ -28,7 +30,7 @@ class TodayViewController: UIViewController {
         super.viewWillAppear(animated)
 
         currentTask = taskKeeper?.fetchNextInQueue()
-        todayTaskLabel.text = (currentTask != nil) ? currentTask!.task : "No mission today"
+        todayTaskLabel.text = (currentTask != nil) ? currentTask!.task : "Nothing today.  Treat yourself!"
         todayTaskLabel.alpha = 0
 
         self.completionButton.hidden = (currentTask == nil)

@@ -14,13 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("Today") as? TodayViewController
         if let todayVC = vc {
             todayVC.taskKeeper = TaskKeeper(db: coreDataStorage())
             let nav = UINavigationController(rootViewController: todayVC)
+            nav.navigationBar.barTintColor = UIColor.whiteColor()
+            UINavigationBar.appearance().translucent = false
+
+            nav.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 20)!]
             self.window?.rootViewController = nav
             self.window?.makeKeyAndVisible()
         }
