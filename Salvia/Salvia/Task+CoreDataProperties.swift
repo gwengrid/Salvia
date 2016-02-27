@@ -18,8 +18,10 @@ extension Task {
     @NSManaged var dateCreated: NSDate?
     @NSManaged var task: String?
 
-    func wasCompletedToday () {
-
+    func wasCompletedToday () -> Bool? {
+        if let today = NSDate.today() {
+            return self.completed?.isEqualToDate(today)
+        }
+        return false
     }
-
 }
