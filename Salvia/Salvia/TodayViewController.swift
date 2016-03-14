@@ -11,6 +11,7 @@ import UIKit
 class TodayViewController: UIViewController {
     var taskKeeper: TaskKeeper?
     var currentTask: Task!
+    var currentTaskModel: TodayVM!
     
     @IBOutlet weak var todayTaskLabel: UILabel!
     @IBOutlet weak var completionButton: UIButton!
@@ -30,11 +31,12 @@ class TodayViewController: UIViewController {
         super.viewWillAppear(animated)
 
         currentTask = taskKeeper?.fetchNextInQueue()
-        todayTaskLabel.text = (currentTask != nil) ? currentTask!.task : "Nothing today.  Treat yourself!"
+        currentTaskModel = TodayVM(task: currentTask)
+
+        todayTaskLabel.text = currentTaskModel.todayTask
+        completionButton.hidden = currentTaskModel.completionButtonHidden
+
         todayTaskLabel.alpha = 0
-
-        self.completionButton.hidden = (currentTask == nil)
-
         UIView.animateWithDuration(2, delay:0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: [.CurveEaseInOut], animations: { () -> Void in
             self.envelopeView.transform = CGAffineTransformIdentity
             self.todayTaskLabel.alpha = 1
@@ -46,7 +48,6 @@ class TodayViewController: UIViewController {
         let newTaskVC = NewTaskViewController(nibName: "NewTask", bundle: nil)
         newTaskVC.taskkeeper = taskKeeper
         self.navigationController?.pushViewController(newTaskVC, animated: true)
-
     }
 
     @IBAction func missionSuccess(sender: AnyObject) {
