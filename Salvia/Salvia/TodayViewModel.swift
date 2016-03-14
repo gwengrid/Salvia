@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct TodayVM {
+    let todayTask: String?
+    let completionButtonHidden: Bool
+
+    init(task:Task?) {
+        self.todayTask = (task != nil) ? task!.task : "Nothing today.  Treat yourself!"
+        self.completionButtonHidden = (task == nil)
+    }
+}
