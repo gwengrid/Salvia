@@ -2,7 +2,7 @@
 //  Task+CoreDataProperties.swift
 //  
 //
-//  Created by gwendolyn weston on 2/11/16.
+//  Created by gwendolyn weston on 3/13/16.
 //
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -18,10 +18,4 @@ extension Task {
     @NSManaged var dateCreated: NSDate?
     @NSManaged var task: String?
 
-    func wasCompletedToday () -> Bool? {
-        if let today = NSDate.today() {
-            return self.completed?.isEqualToDate(today)
-        }
-        return false
-    }
 }
