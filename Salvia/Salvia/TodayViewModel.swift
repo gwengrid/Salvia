@@ -7,12 +7,27 @@
 //
 
 import Foundation
-import RxCocoa
 
 enum TodayState {
     case Empty
     case Completed
     case Present
+
+    var completionButtonState: Bool {
+        switch self {
+        case .Empty, .Completed: return true
+        case .Present: return false
+        }
+    }
+
+    var defaultString: String {
+        switch self {
+        case .Empty: return "Nothing for today.  Treat yourself!"
+        case .Completed: return "Good job!"
+        default: return ""
+        }
+    }
+
 }
 
 extension TodayState {
@@ -24,21 +39,6 @@ extension TodayState {
             self = .Completed
         default:
             self = .Present
-        }
-    }
-
-    func completionButtonState() -> Bool{
-        switch self {
-        case .Empty, .Completed: return true
-        case .Present: return false
-        }
-    }
-
-    func defaultString() -> String {
-        switch self {
-        case .Empty: return "Nothing today.  Treat yourself!"
-        case .Completed: return "Good job!"
-        default: return ""
         }
     }
 }
