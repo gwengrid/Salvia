@@ -12,8 +12,9 @@ import CoreData
 @objc(Task)
 class Task: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+}
 
+extension Task {
     func wasCompletedToday () -> Bool? {
         if let today = NSDate.today() {
             return self.completed?.isEqualToDate(today)

@@ -7,13 +7,38 @@
 //
 
 import Foundation
+import RxCocoa
 
-struct TodayVM {
-    let todayTask: String?
-    let completionButtonHidden: Bool
+enum TodayState {
+    case Empty
+    case Completed
+    case Present
+}
 
-    init(task:Task?) {
-        self.todayTask = (task != nil) ? task!.task : "Nothing today.  Treat yourself!"
-        self.completionButtonHidden = (task == nil)
+extension TodayState {
+    init(task: Task?) {
+        switch task {
+        case nil:
+            self = .Empty
+        case let task where task?.wasCompletedToday() == true:
+            self = .Completed
+        default:
+            self = .Present
+        }
+    }
+
+    func completionButtonState() -> Bool{
+        switch self {
+        case .Empty, .Completed: return true
+        case .Present: return false
+        }
+    }
+
+    func defaultString() -> String {
+        switch self {
+        case .Empty: return "Nothing today.  Treat yourself!"
+        case .Completed: return "Good job!"
+        default: return ""
+        }
     }
 }

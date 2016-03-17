@@ -15,7 +15,7 @@ import CoreData
 extension Task {
 
     @NSManaged var completed: NSDate?
-    @NSManaged var dateCreated: NSDate?
-    @NSManaged var task: String?
+    @NSManaged var dateCreated: NSDate
+    @NSManaged var task: String
 
 }

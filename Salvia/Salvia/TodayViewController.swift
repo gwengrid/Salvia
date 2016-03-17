@@ -10,12 +10,29 @@ import UIKit
 
 class TodayViewController: UIViewController {
     var taskKeeper: TaskKeeper?
-    var currentTask: Task!
-    var currentTaskModel: TodayVM!
+    var currentTask: Task? {
+        didSet {
+            todayState = TodayState(task: currentTask)
+        }
+    }
+    var todayState: TodayState! {
+        didSet {
+            completionButton.hidden = todayState.completionButtonState()
+            if todayState == TodayState.Present, let taskDescription = currentTask?.task {
+                todayTaskLabel.text = taskDescription
+            } else {
+                todayTaskLabel.text = todayState.defaultString()
+            }
+        }
+    }
     
     @IBOutlet weak var todayTaskLabel: UILabel!
     @IBOutlet weak var completionButton: UIButton!
     @IBOutlet weak var envelopeView: UIImageView!
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +48,6 @@ class TodayViewController: UIViewController {
         super.viewWillAppear(animated)
 
         currentTask = taskKeeper?.fetchNextInQueue()
-        currentTaskModel = TodayVM(task: currentTask)
-
-        todayTaskLabel.text = currentTaskModel.todayTask
-        completionButton.hidden = currentTaskModel.completionButtonHidden
 
         todayTaskLabel.alpha = 0
         UIView.animateWithDuration(2, delay:0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: [.CurveEaseInOut], animations: { () -> Void in
@@ -51,9 +64,10 @@ class TodayViewController: UIViewController {
     }
 
     @IBAction func missionSuccess(sender: AnyObject) {
-        self.completionButton.hidden = true
-        taskKeeper?.complete(currentTask)
-        todayTaskLabel.text = "Good job!"
+        if currentTask != nil {
+            taskKeeper?.complete(currentTask!)
+            todayState = TodayState.Completed
+        }
     }
 }
 
