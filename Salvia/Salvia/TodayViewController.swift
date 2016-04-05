@@ -25,6 +25,7 @@ class TodayViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var peekingView: UIView!
     @IBOutlet weak var todayTaskLabel: UILabel!
     @IBOutlet weak var happyFaceView: UIImageView!
 
@@ -34,6 +35,29 @@ class TodayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("Sticky") as? StickyViewController
+        if let childVC = vc {
+            self.addChildViewController(childVC)
+            self.view.addSubview(childVC.view)
+
+            childVC.view.transform = CGAffineTransformMakeTranslation(0, 450)
+            childVC.didMoveToParentViewController(self)
+
+            childVC.presentationStateChanged = { (state:StickyState) in
+                let transform: CGAffineTransform
+                switch state{
+                case .Present:
+                    transform = CGAffineTransformIdentity
+                    break
+                case .Hiding:
+                    transform = CGAffineTransformMakeTranslation(0, 450)
+                    break
+                }
+                childVC.view.transform = transform
+            }
+        }
     }
 
     override func viewWillAppear(animated: Bool) {

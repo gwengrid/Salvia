@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Montserrat-Regular.ttf">
@@ -36,58 +37,13 @@
                                 <color key="textColor" red="0.51372549019607838" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YP4-Zk-87E">
-                                <rect key="frame" x="140" y="556" width="321" height="44"/>
-                                <color key="backgroundColor" red="1" green="0.89803921568627454" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="321" id="CYm-xb-GX2"/>
-                                    <constraint firstAttribute="height" constant="44" id="o3u-Gy-96g"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                        <size key="value" width="2" height="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                        <real key="value" value="0.80000000000000004"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEm-PO-Kro">
-                                <rect key="frame" x="278" y="536" width="44" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="VdY-zl-aig"/>
-                                    <constraint firstAttribute="width" constant="44" id="s0v-Z5-G5W"/>
-                                </constraints>
-                                <state key="normal" image="AddButton"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                        <size key="value" width="2" height="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                        <real key="value" value="0.80000000000000004"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="rJI-kf-Zh8" kind="modal" identifier="showSticky" modalPresentationStyle="currentContext" id="aL0-1v-z7r"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VEm-PO-Kro" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1tU-ac-Ha6"/>
                             <constraint firstItem="GBb-jw-LXb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="2Dm-8k-5iK"/>
                             <constraint firstItem="T45-8U-Kg3" firstAttribute="top" secondItem="GBb-jw-LXb" secondAttribute="bottom" constant="56" id="3LT-8A-HyZ"/>
-                            <constraint firstItem="YP4-Zk-87E" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5sd-Ty-KQg"/>
                             <constraint firstItem="GBb-jw-LXb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AQ2-0B-Vog"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VEm-PO-Kro" secondAttribute="bottom" constant="20" id="WCN-q1-3tf"/>
                             <constraint firstItem="T45-8U-Kg3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dMh-pl-nHO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YP4-Zk-87E" secondAttribute="bottom" id="uC7-fg-M7t"/>
                         </constraints>
                     </view>
                     <connections>
@@ -102,7 +58,7 @@
         <!--Sticky View Controller-->
         <scene sceneID="AfM-Na-x0S">
             <objects>
-                <viewController id="rJI-kf-Zh8" customClass="StickyViewController" customModule="Salvia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Sticky" id="rJI-kf-Zh8" customClass="StickyViewController" customModule="Salvia" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="exV-nl-MDc"/>
                         <viewControllerLayoutGuide type="bottom" id="leU-y3-9EI"/>
@@ -111,80 +67,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rwj-VN-WWn">
-                                <rect key="frame" x="167" y="163" width="267" height="272"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwj-VN-WWn">
+                                <rect key="frame" x="140" y="140" width="321" height="321"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYV-hR-gHL">
-                                        <rect key="frame" x="0.0" y="220" width="53" height="52"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYV-hR-gHL">
+                                        <rect key="frame" x="3" y="274" width="44" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="Fy9-p9-vAE"/>
                                             <constraint firstAttribute="height" constant="44" id="HVE-4e-qi3"/>
                                         </constraints>
                                         <state key="normal" image="XButton"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                                <size key="value" width="2" height="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                                <real key="value" value="0.29999999999999999"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="dismiss:" destination="rJI-kf-Zh8" eventType="touchUpInside" id="7eP-hl-PgY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Uo-Zm-otf">
-                                        <rect key="frame" x="222" y="227" width="37" height="37"/>
+                                        <rect key="frame" x="280" y="280" width="33" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="0N2-7a-mpE"/>
+                                            <constraint firstAttribute="height" constant="44" id="Bup-GS-Y3v"/>
+                                            <constraint firstAttribute="width" constant="44" id="UPW-MX-9bJ"/>
                                             <constraint firstAttribute="width" constant="33" id="XAm-j4-FnB"/>
                                         </constraints>
                                         <state key="normal" image="AddButton"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                                <size key="value" width="2" height="2"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                                <real key="value" value="0.29999999999999999"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="0N2-7a-mpE"/>
+                                                <exclude reference="XAm-j4-FnB"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="addSticky:" destination="rJI-kf-Zh8" eventType="touchUpInside" id="BvO-Ik-IUw"/>
+                                        </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="What do you want to do?" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aYn-8o-76P">
-                                        <rect key="frame" x="13" y="16" width="241" height="196"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="What do you want to do?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aYn-8o-76P">
+                                        <rect key="frame" x="8" y="41" width="305" height="212"/>
                                         <color key="textColor" red="0.51372549020000002" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.8980392157" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="321" id="Ac3-fx-2og"/>
+                                    <constraint firstItem="7Uo-Zm-otf" firstAttribute="centerY" secondItem="rwj-VN-WWn" secondAttribute="top" id="0C3-5H-qdr"/>
                                     <constraint firstAttribute="bottom" secondItem="7Uo-Zm-otf" secondAttribute="bottom" constant="8" id="Cwq-El-L0D"/>
-                                    <constraint firstAttribute="height" constant="271" id="GLY-e3-Fiv"/>
+                                    <constraint firstAttribute="height" constant="321" id="GLY-e3-Fiv"/>
                                     <constraint firstAttribute="bottom" secondItem="vYV-hR-gHL" secondAttribute="bottom" constant="3" id="K5m-Os-UoV"/>
-                                    <constraint firstAttribute="height" constant="44" id="bid-GP-pP8"/>
-                                    <constraint firstAttribute="width" constant="267" id="dLO-fI-Mwf"/>
+                                    <constraint firstItem="7Uo-Zm-otf" firstAttribute="centerX" secondItem="rwj-VN-WWn" secondAttribute="centerX" id="Lzu-iD-f1D"/>
+                                    <constraint firstAttribute="width" constant="321" id="dLO-fI-Mwf"/>
                                     <constraint firstItem="vYV-hR-gHL" firstAttribute="leading" secondItem="rwj-VN-WWn" secondAttribute="leading" constant="3" id="lIz-m3-Bea"/>
                                     <constraint firstAttribute="trailing" secondItem="7Uo-Zm-otf" secondAttribute="trailing" constant="8" id="qhy-I9-OjZ"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                                        <size key="value" width="2" height="2"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                                        <real key="value" value="0.80000000000000004"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="Ac3-fx-2og"/>
-                                        <exclude reference="bid-GP-pP8"/>
+                                        <exclude reference="Cwq-El-L0D"/>
+                                        <exclude reference="qhy-I9-OjZ"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -195,6 +133,18 @@
                             <constraint firstItem="rwj-VN-WWn" firstAttribute="centerX" secondItem="Bq3-jE-xJc" secondAttribute="centerX" id="n72-79-HQN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="7Uo-Zm-otf" id="PvJ-cr-8Th"/>
+                        <outlet property="stickyView" destination="rwj-VN-WWn" id="7RE-q1-afA"/>
+                        <outletCollection property="StickyHidingConstraints" destination="Lzu-iD-f1D" collectionClass="NSMutableArray" id="Qef-EN-lfU"/>
+                        <outletCollection property="StickyHidingConstraints" destination="0C3-5H-qdr" collectionClass="NSMutableArray" id="FGA-TL-DJt"/>
+                        <outletCollection property="StickyPresentConstraints" destination="Cwq-El-L0D" collectionClass="NSMutableArray" id="9S3-n0-CtU"/>
+                        <outletCollection property="StickyPresentConstraints" destination="qhy-I9-OjZ" collectionClass="NSMutableArray" id="nkn-Nt-SYt"/>
+                        <outletCollection property="ButtonHidingConstraints" destination="UPW-MX-9bJ" collectionClass="NSMutableArray" id="iA5-Jt-9Wo"/>
+                        <outletCollection property="ButtonHidingConstraints" destination="Bup-GS-Y3v" collectionClass="NSMutableArray" id="FOZ-8e-Pn3"/>
+                        <outletCollection property="ButtonPresentConstraints" destination="0N2-7a-mpE" collectionClass="NSMutableArray" id="mNk-Qd-yKh"/>
+                        <outletCollection property="ButtonPresentConstraints" destination="XAm-j4-FnB" collectionClass="NSMutableArray" id="0CB-86-Hik"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IbK-Vr-cXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
