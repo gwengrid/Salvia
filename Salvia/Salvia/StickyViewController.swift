@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Colours
 
 enum StickyState {
     case Hiding
@@ -36,6 +37,8 @@ class StickyViewController: UIViewController {
         }
     }
     var presentationStateChanged:((StickyState) -> ())?
+    let stickyColours: [UIColor] = [UIColor(hex:"FFE56F"), UIColor(hex: "6FF2FF"), UIColor(hex: "FF87FB"), UIColor(hex: "93FF6F")]
+    var stickyIndex = 0
 
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var stickyView: UIView!
@@ -63,12 +66,20 @@ class StickyViewController: UIViewController {
     @IBAction func addSticky(sender: AnyObject) {
         if presentationState == .Present {
             UIView.beginAnimations("Flip", context: nil)
-            UIView.setAnimationDuration(1.0)
+            UIView.setAnimationDuration(0.5)
             UIView.setAnimationTransition(.CurlUp, forView: self.stickyView, cache: true)
             UIView.commitAnimations()
+
+            if ++stickyIndex == stickyColours.count {
+                stickyIndex = 0
+            }
+
+            self.stickyView.backgroundColor = stickyColours[stickyIndex]
+
+        } else {
+            self.presentationState = self.presentationState == .Hiding ? .Present : .Hiding
         }
 
-        self.presentationState = self.presentationState == .Hiding ? .Present : .Hiding
     }
 }
 

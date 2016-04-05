@@ -1,24 +1,16 @@
 PODS:
+  - Colours/Swift (5.13.0)
   - Result (1.0.2)
-  - RxBlocking (2.2.0):
-    - RxSwift (~> 2.2)
-  - RxCocoa (2.2.0):
-    - RxSwift (~> 2.2)
-  - RxSwift (2.2.0)
-  - SugarRecord/CoreData+RX (2.2.2):
+  - SugarRecord/CoreData (2.2.4):
     - Result (~> 1.0)
-    - RxBlocking (~> 2.1)
-    - RxCocoa (~> 2.1)
-    - RxSwift (~> 2.1)
 
 DEPENDENCIES:
-  - SugarRecord/CoreData+RX
+  - Colours/Swift
+  - SugarRecord/CoreData
 
 SPEC CHECKSUMS:
+  Colours: f24220c38f13deac88612667e9b4a7fb96b871d4
   Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
-  RxBlocking: 5bbc826774c4290effa8fe070841e9d45e864639
-  RxCocoa: 42efb7a7145a8d1d5878e94ce48a580d29e0c796
-  RxSwift: b8a749f2204c6c7a5c29b306a9c3bc11d5b87c5b
-  SugarRecord: d7d3ea5d332cfb324e093e95911396f6d724d559
+  SugarRecord: b3125da3183ff051f19187c050d79063621b3ff5
 
 COCOAPODS: 0.39.0

@@ -17,7 +17,7 @@ SugarRecord is a persistence wrapper designed to make working with persistence s
 The library is maintained by [@pepibumur](https://github.com/pepibumur). You can reach me at [pepibumur@gmail.com](mailto://pepibumur@gmail.com) for help or whatever you need to commend about the library.
 
 ## Features
-- Swift 2.1 compatible (XCode 7.1).
+- Swift 2.1 compatible (Xcode 7.1).
 - Fully rewritten from the version 1.0.
 - Reactive API (using ReactiveCocoa).
 - Protocols based design.
@@ -31,10 +31,10 @@ The library is maintained by [@pepibumur](https://github.com/pepibumur). You can
 
 ## Setup
 
-### [Cocoapods](https://cocoapods.org)
+### [CocoaPods](https://cocoapods.org)
 
 1. Install [CocoaPods](https://cocoapods.org). You can do it with `gem install cocoapods`
-2. Edit your `Podfile` file and add the following line `pod 'SugarRecord'
+2. Edit your `Podfile` file and add the following line `pod 'SugarRecord'`
 3. Update your pods with the command `pod install`
 4. Open the project from the generated workspace (`.xcworkspace` file).
 
@@ -57,7 +57,7 @@ pod "SugarRecord/Realm+RAC"
 
 ### [Carthage](https://carthage)
 1. Install [Carthage](https://github.com/carthage/carthage) on your computer using `brew install carthage`
-3. Edit your `Cartfile` file adding the following line `github 'pepibumur/sugarrecord'`
+3. Edit your `Cartfile` file adding the following line `github "pepibumur/sugarrecord"`
 4. Update and build frameworks with `carthage update`
 5. Add generated frameworks to your app main target following the steps [here](https://github.com/carthage/carthage)
 6. Link your target with **CoreData** library *(from Build Phases)*
@@ -129,9 +129,14 @@ Although `Context`s offer `insertion` and `deletion` methods that you can use it
 - **Save**: All the changes you apply to that context are in a memory state unless you call the `save()` method. That method will persist the changes to your store and propagate them across all the available contexts.
 
 ```swift
-db.operation { (context, save) -> Void in
-  // Do your operations here
-  save()
+do {
+  db.operation { (context, save) throws -> Void in
+    // Do your operations here
+    save()
+  }
+}
+catch {
+  // There was an error in the operation
 }
 ```
 
@@ -139,11 +144,16 @@ db.operation { (context, save) -> Void in
 You can use the context `new()` method to initialize a model **without inserting it in the context**:
 
 ```swift
-db.operation { (context, save) -> Void in
-  let newTask: Track = try! context.new()
-  newTask.name = "Make CoreData easier!"
-  try! context.insert(newTask)
-  save()
+do {
+  db.operation { (context, save) throws -> Void in
+    let newTask: Track = try! context.new()
+    newTask.name = "Make CoreData easier!"
+    try! context.insert(newTask)
+    save()
+  }
+}
+catch {
+  // There was an error in the operation
 }
 ```
 > In order to insert the model into the context you use the insert() method.
@@ -152,10 +162,15 @@ db.operation { (context, save) -> Void in
 You can use the `create()` for initializing and inserting in the context in the same operation:
 
 ```swift
-db.operation { (context, save) -> Void in
-  let newTask: Track = try! context.create()
-  newTask.name = "Make CoreData easier!"
-  save()
+do {
+  db.operation { (context, save) throws -> Void in
+    let newTask: Track = try! context.create()
+    newTask.name = "Make CoreData easier!"
+    save()
+  }
+}
+catch {
+  // There was an error in the operation
 }
 ```
 
@@ -163,12 +178,17 @@ db.operation { (context, save) -> Void in
 In a similar way you can use the `remove()` method from the context passing the objects you want to remove from the database:
 
 ```swift
-db.operation { (context, save) -> Void in
-  let john: User? = try! context.request(User.self).filteredWith("id", equalTo: "1234").fetch().first
-  if let john = john {
-    try! context.remove([john])
-    save()
+do {
+  db.operation { (context, save) -> Void in
+    let john: User? = try! context.request(User.self).filteredWith("id", equalTo: "1234").fetch().first
+    if let john = john {
+      try! context.remove([john])
+      save()
+    }
   }
+}
+catch {
+  // There was an error in the operation
 }
 ```
 

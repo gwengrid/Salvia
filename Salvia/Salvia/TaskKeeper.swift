@@ -21,7 +21,7 @@ class TaskKeeper {
     }
 
     func saveNewTask(description: String) {
-        self.db.operation { (context, save) -> Void in
+        try! self.db.operation { (context, save) -> Void in
             let newTask: Task = try! context.create()
             newTask.task = description
             if let date = NSDate.today() {
@@ -46,7 +46,7 @@ class TaskKeeper {
 
     func complete(task: Task) {
 
-        self.db.operation { (context, save) -> Void in
+        try! self.db.operation { (context, save) -> Void in
             let predicate: NSPredicate = NSPredicate(format: "(SELF = %@)", task)
             let fetched: Task? = try! context.fetch(Request<Task>().filteredWith(predicate: predicate)).first
 

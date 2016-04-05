@@ -100,8 +100,8 @@
                                             <action selector="addSticky:" destination="rJI-kf-Zh8" eventType="touchUpInside" id="BvO-Ik-IUw"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="What do you want to do?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aYn-8o-76P">
-                                        <rect key="frame" x="8" y="41" width="305" height="212"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="What do you want to do?" translatesAutoresizingMaskIntoConstraints="NO" id="aYn-8o-76P">
+                                        <rect key="frame" x="16" y="27" width="305" height="212"/>
                                         <color key="textColor" red="0.51372549020000002" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
