@@ -46,16 +46,23 @@ class TodayViewController: UIViewController {
             childVC.didMoveToParentViewController(self)
 
             childVC.presentationStateChanged = { (state:StickyState) in
+
                 let transform: CGAffineTransform
+                let opacity: CGFloat
                 switch state{
                 case .Present:
                     transform = CGAffineTransformIdentity
+                    opacity = 0
                     break
                 case .Hiding:
                     transform = CGAffineTransformMakeTranslation(0, 450)
+                    opacity = 1
                     break
                 }
                 childVC.view.transform = transform
+                self.todayTaskLabel.alpha = opacity
+                self.happyFaceView.alpha = opacity
+
             }
         }
     }

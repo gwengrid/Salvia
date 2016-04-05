@@ -24,15 +24,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Serene" translatesAutoresizingMaskIntoConstraints="NO" id="T45-8U-Kg3">
-                                <rect key="frame" x="180" y="126" width="240" height="289"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Serene" translatesAutoresizingMaskIntoConstraints="NO" id="T45-8U-Kg3">
+                                <rect key="frame" x="180" y="156" width="240" height="289"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="hYk-fe-fQx"/>
-                                    <constraint firstAttribute="height" constant="289" id="mDu-aU-giL"/>
+                                    <constraint firstAttribute="height" constant="289" id="QSb-AJ-dRe"/>
+                                    <constraint firstAttribute="width" constant="240" id="jfT-XV-jew"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="GBb-jw-LXb">
-                                <rect key="frame" x="221" y="400" width="158" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="GBb-jw-LXb">
+                                <rect key="frame" x="197" y="462" width="207" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="1lq-nD-gBI"/>
+                                    <constraint firstAttribute="width" constant="207" id="9Hg-tU-pfo"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
                                 <color key="textColor" red="0.51372549019607838" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -42,9 +46,17 @@
                         <constraints>
                             <constraint firstItem="GBb-jw-LXb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="150" id="2Dm-8k-5iK"/>
                             <constraint firstItem="T45-8U-Kg3" firstAttribute="top" secondItem="GBb-jw-LXb" secondAttribute="bottom" constant="56" id="3LT-8A-HyZ"/>
-                            <constraint firstItem="GBb-jw-LXb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AQ2-0B-Vog"/>
-                            <constraint firstItem="T45-8U-Kg3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dMh-pl-nHO"/>
+                            <constraint firstItem="T45-8U-Kg3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3WX-FD-dln"/>
+                            <constraint firstItem="GBb-jw-LXb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kpV-oV-CJK"/>
+                            <constraint firstItem="T45-8U-Kg3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="myL-Q6-jGj"/>
+                            <constraint firstItem="GBb-jw-LXb" firstAttribute="top" secondItem="T45-8U-Kg3" secondAttribute="bottom" constant="17" id="yvB-8s-fkE"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3LT-8A-HyZ"/>
+                                <exclude reference="2Dm-8k-5iK"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="happyFaceView" destination="T45-8U-Kg3" id="kEw-uS-nbT"/>
@@ -53,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="440" y="371"/>
+            <point key="canvasLocation" x="431" y="489"/>
         </scene>
         <!--Sticky View Controller-->
         <scene sceneID="AfM-Na-x0S">
