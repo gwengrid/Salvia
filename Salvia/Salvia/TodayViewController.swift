@@ -17,7 +17,6 @@ class TodayViewController: UIViewController {
     }
     var todayState: TodayState! {
         didSet {
-            completionButton.hidden = todayState.completionButtonState
             if todayState == TodayState.Present, let taskDescription = currentTask?.task {
                 todayTaskLabel.text = taskDescription
             } else {
@@ -27,8 +26,7 @@ class TodayViewController: UIViewController {
     }
     
     @IBOutlet weak var todayTaskLabel: UILabel!
-    @IBOutlet weak var completionButton: UIButton!
-    @IBOutlet weak var envelopeView: UIImageView!
+    @IBOutlet weak var happyFaceView: UIImageView!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -36,12 +34,6 @@ class TodayViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: Selector("present"))
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .Plain, target: nil, action: nil)
-
-        self.envelopeView.transform = CGAffineTransformMakeTranslation(0, self.view.frame.height)
-        todayTaskLabel.alpha = 0
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -49,10 +41,8 @@ class TodayViewController: UIViewController {
 
         currentTask = taskKeeper?.fetchNextInQueue()
 
-        UIView.animateWithDuration(2, delay:0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: [.CurveEaseInOut], animations: { () -> Void in
-            self.envelopeView.transform = CGAffineTransformIdentity
-            self.todayTaskLabel.alpha = 1
-
+        UIView.animateWithDuration(1, delay:0, options: [.CurveEaseInOut, .Autoreverse, .Repeat], animations: { () -> Void in
+            self.happyFaceView.transform = CGAffineTransformMakeTranslation(0, 5)
         }, completion: nil)
     }
 
@@ -68,5 +58,6 @@ class TodayViewController: UIViewController {
             todayState = TodayState.Completed
         }
     }
+
 }
 

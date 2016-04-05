@@ -13,16 +13,9 @@ enum TodayState {
     case Completed
     case Present
 
-    var completionButtonState: Bool {
-        switch self {
-        case .Empty, .Completed: return true
-        case .Present: return false
-        }
-    }
-
     var defaultString: String {
         switch self {
-        case .Empty: return "Nothing for today.  Treat yourself!"
+        case .Empty: return "Nothing for today!"
         case .Completed: return "Good job!"
         default: return ""
         }

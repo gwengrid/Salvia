@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1E8A971CB3641800D94961 /* StickyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E8A961CB3641800D94961 /* StickyViewController.swift */; };
+		1B1E8A991CB457DC00D94961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E8A981CB457DC00D94961 /* Assets.xcassets */; };
 		1B2460A31C76A16A00BC8B78 /* Envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B2460A21C76A16A00BC8B78 /* Envelope.png */; };
+		1B6A36FA1CA9EBD900D4B299 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B6A36F81CA9EBD900D4B299 /* Montserrat-Bold.ttf */; };
+		1B6A36FB1CA9EBD900D4B299 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B6A36F91CA9EBD900D4B299 /* Montserrat-Regular.ttf */; };
 		1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */; };
 		1B70FB4D1C507A3800DD24EA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */; };
 		1B70FB501C507A3800DD24EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B70FB4E1C507A3800DD24EA /* Main.storyboard */; };
 		1B70FB531C507A3800DD24EA /* Salvia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB511C507A3800DD24EA /* Salvia.xcdatamodeld */; };
-		1B70FB551C507A3800DD24EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B70FB541C507A3800DD24EA /* Assets.xcassets */; };
 		1B70FB581C507A3800DD24EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B70FB561C507A3800DD24EA /* LaunchScreen.storyboard */; };
 		1B70FB631C507A3800DD24EA /* SalviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB621C507A3800DD24EA /* SalviaTests.swift */; };
 		1B70FB6E1C507A3800DD24EA /* SalviaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB6D1C507A3800DD24EA /* SalviaUITests.swift */; };
@@ -44,13 +47,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B1E8A961CB3641800D94961 /* StickyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyViewController.swift; sourceTree = "<group>"; };
+		1B1E8A981CB457DC00D94961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B2460A21C76A16A00BC8B78 /* Envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Envelope.png; path = Assets/Envelope.png; sourceTree = "<group>"; };
+		1B6A36F81CA9EBD900D4B299 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		1B6A36F91CA9EBD900D4B299 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		1B70FB471C507A3800DD24EA /* Salvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		1B70FB4F1C507A3800DD24EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B70FB521C507A3800DD24EA /* Salvia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Salvia.xcdatamodel; sourceTree = "<group>"; };
-		1B70FB541C507A3800DD24EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B70FB571C507A3800DD24EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B70FB591C507A3800DD24EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B70FB5E1C507A3800DD24EA /* SalviaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B6A36F71CA9EBC200D4B299 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1B1E8A981CB457DC00D94961 /* Assets.xcassets */,
+				1B6A36F81CA9EBD900D4B299 /* Montserrat-Bold.ttf */,
+				1B6A36F91CA9EBD900D4B299 /* Montserrat-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		1B70FB3E1C507A3800DD24EA = {
 			isa = PBXGroup;
 			children = (
@@ -124,13 +140,14 @@
 		1B70FB491C507A3800DD24EA /* Salvia */ = {
 			isa = PBXGroup;
 			children = (
+				1B6A36F71CA9EBC200D4B299 /* Resources */,
 				1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */,
 				1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */,
 				1BD4858B1C90DFBE00343A3F /* TodayViewModel.swift */,
 				1BA23BA91C6D191700FF9059 /* NewTaskViewController.swift */,
+				1B1E8A961CB3641800D94961 /* StickyViewController.swift */,
 				1B70FB4E1C507A3800DD24EA /* Main.storyboard */,
 				1B2460A21C76A16A00BC8B78 /* Envelope.png */,
-				1B70FB541C507A3800DD24EA /* Assets.xcassets */,
 				1B70FB561C507A3800DD24EA /* LaunchScreen.storyboard */,
 				1B70FB591C507A3800DD24EA /* Info.plist */,
 				1B70FB511C507A3800DD24EA /* Salvia.xcdatamodeld */,
@@ -287,8 +304,10 @@
 			files = (
 				1BA23BA81C6D16DF00FF9059 /* NewTask.xib in Resources */,
 				1B2460A31C76A16A00BC8B78 /* Envelope.png in Resources */,
+				1B6A36FB1CA9EBD900D4B299 /* Montserrat-Regular.ttf in Resources */,
+				1B6A36FA1CA9EBD900D4B299 /* Montserrat-Bold.ttf in Resources */,
+				1B1E8A991CB457DC00D94961 /* Assets.xcassets in Resources */,
 				1B70FB581C507A3800DD24EA /* LaunchScreen.storyboard in Resources */,
-				1B70FB551C507A3800DD24EA /* Assets.xcassets in Resources */,
 				1B70FB501C507A3800DD24EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BA23BC21C6F05D900FF9059 /* NSDate+Helper.swift in Sources */,
+				1B1E8A971CB3641800D94961 /* StickyViewController.swift in Sources */,
 				1BA23BB41C6D59E200FF9059 /* Task.swift in Sources */,
 				1B70FB531C507A3800DD24EA /* Salvia.xcdatamodeld in Sources */,
 				1BA23BAA1C6D191700FF9059 /* NewTaskViewController.swift in Sources */,
