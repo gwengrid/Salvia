@@ -9,33 +9,30 @@
 import UIKit
 import Colours
 
-enum StickyState {
-    case Hiding
-    case Present
-}
-
 class StickyViewController: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
+    var taskkeeper: TaskKeeper!
+
     var presentationState: StickyState = .Hiding {
         didSet {
-            let isHiding = self.presentationState == .Hiding
-            let stickyRemove = isHiding ? self.StickyPresentConstraints : self.StickyHidingConstraints
-            let stickyAdd = isHiding ? self.StickyHidingConstraints : self.StickyPresentConstraints
-            let buttonRemove = isHiding ? self.ButtonPresentConstraints : self.ButtonHidingConstraints
-            let buttonAdd = isHiding ? self.ButtonHidingConstraints : self.ButtonPresentConstraints
-
-            UIView.animateWithDuration(0.5) { () -> Void in
-                self.presentationStateChanged?(self.presentationState)
-                self.taskText.alpha = isHiding ? 0 : 1
-
-                self.stickyView.removeConstraints(stickyRemove)
-                self.addButton.removeConstraints(buttonRemove)
-
-                self.stickyView.addConstraints(stickyAdd)
-                self.addButton.addConstraints(buttonAdd)
-
-                self.stickyView.backgroundColor = self.stickyColours[0]
-                self.view.layoutIfNeeded()
-            }
+//            let isHiding = self.presentationState == .Hiding
+//            let stickyRemove = isHiding ? self.StickyPresentConstraints : self.StickyHidingConstraints
+//            let stickyAdd = isHiding ? self.StickyHidingConstraints : self.StickyPresentConstraints
+//            let buttonRemove = isHiding ? self.ButtonPresentConstraints : self.ButtonHidingConstraints
+//            let buttonAdd = isHiding ? self.ButtonHidingConstraints : self.ButtonPresentConstraints
+//
+//            UIView.animateWithDuration(0.5) { () -> Void in
+//                self.presentationStateChanged?(self.presentationState)
+//                self.taskText.alpha = isHiding ? 0 : 1
+//
+//                self.stickyView.removeConstraints(stickyRemove)
+//                self.addButton.removeConstraints(buttonRemove)
+//
+//                self.stickyView.addConstraints(stickyAdd)
+//                self.addButton.addConstraints(buttonAdd)
+//
+//                self.stickyView.backgroundColor = self.stickyColours[0]
+//                self.view.layoutIfNeeded()
+//            }
         }
     }
     var presentationStateChanged:((StickyState) -> ())?
@@ -63,7 +60,7 @@ class StickyViewController: UIViewController, UIGestureRecognizerDelegate, UITex
     var quoteIndex = 0
 
     @IBOutlet weak var taskText: UITextView!
-
+    
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var stickyView: UIView!
     @IBOutlet var StickyPresentConstraints: [NSLayoutConstraint]!
@@ -98,11 +95,17 @@ class StickyViewController: UIViewController, UIGestureRecognizerDelegate, UITex
 
     @IBAction func dismiss(sender: AnyObject) {
         self.taskText.resignFirstResponder()
-        self.presentationState = .Hiding
+
+        // if no task, hide
+        // if there is task, arrive
+//        self.presentationState = .Hiding
+        self.presentationState = .Arrived
     }
     
     @IBAction func addSticky(sender: AnyObject) {
-        if presentationState == .Present {
+        if presentationState == .Input {
+//            taskkeeper.saveNewTask(self.taskText.text)
+
             UIView.beginAnimations("Flip", context: nil)
             UIView.setAnimationDuration(0.5)
             UIView.setAnimationTransition(.CurlUp, forView: self.stickyView, cache: true)
@@ -120,7 +123,7 @@ class StickyViewController: UIViewController, UIGestureRecognizerDelegate, UITex
 
         } else {
             self.taskText.text = "What do you want to do?"
-            self.presentationState = .Hiding
+            self.presentationState = .Input
         }
     }
 
