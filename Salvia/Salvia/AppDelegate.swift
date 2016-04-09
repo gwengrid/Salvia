@@ -19,12 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = storyboard.instantiateViewControllerWithIdentifier("Today") as? TodayViewController
         if let todayVC = vc {
             todayVC.taskKeeper = TaskKeeper(db: coreDataStorage())
-            let nav = UINavigationController(rootViewController: todayVC)
-            nav.navigationBar.barTintColor = UIColor.whiteColor()
-            UINavigationBar.appearance().translucent = false
 
-            nav.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 20)!]
-            self.window?.rootViewController = nav
+            self.window?.rootViewController = todayVC
             self.window?.makeKeyAndVisible()
         }
         return true
