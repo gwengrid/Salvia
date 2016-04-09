@@ -22,6 +22,10 @@ class TodayViewController: UIViewController {
             } else {
                 todayTaskLabel.text = todayState.defaultString
             }
+
+            if let image = todayState.defaultImage {
+                self.happyFaceView.image = image
+            }
         }
     }
     

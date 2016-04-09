@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum TodayState {
     case Empty
@@ -15,9 +16,17 @@ enum TodayState {
 
     var defaultString: String {
         switch self {
-        case .Empty: return "Nothing for today!"
-        case .Completed: return "Good job!"
+        case .Empty: return "Nothing to do today!"
+        case .Completed: return "Enjoy the rest of your day!"
         default: return ""
+        }
+    }
+
+    var defaultImage: UIImage? {
+        switch self {
+        case .Empty: return UIImage(named:"Serene")
+        case .Completed: return UIImage(named:"Congrats")
+        default: return nil
         }
     }
 
