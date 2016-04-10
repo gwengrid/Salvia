@@ -50,20 +50,23 @@ class TodayViewController: UIViewController {
             childVC.didMoveToParentViewController(self)
             childVC.taskkeeper = taskKeeper
 
-            childVC.presentationStateChanged = { (state:StickyState) in
+            childVC.paradigmChanged = { (state:StickyParadigm) in
 
                 let transform: CGAffineTransform
                 let opacity: CGFloat
                 switch state{
-                case .Present:
+                case .Intention:
                     transform = CGAffineTransformIdentity
                     opacity = 0
                     break
-                case .Hiding:
+                case .Ease:
                     transform = CGAffineTransformMakeTranslation(0, 450)
                     opacity = 1
                     break
+                case .Arrived:
+                    return
                 }
+
                 childVC.view.transform = transform
                 self.todayTaskLabel.alpha = opacity
                 self.happyFaceView.alpha = opacity
@@ -75,7 +78,6 @@ class TodayViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
 
-        currentTask = taskKeeper?.fetchNextInQueue()
 
         UIView.animateWithDuration(1, delay:0, options: [.CurveEaseInOut, .Autoreverse, .Repeat], animations: { () -> Void in
             self.happyFaceView.transform = CGAffineTransformMakeTranslation(0, 5)

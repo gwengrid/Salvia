@@ -9,6 +9,7 @@
         <mutableArray key="Montserrat-Regular.ttf">
             <string>Montserrat-Regular</string>
             <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -170,25 +171,39 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dq1-vB-zW3">
+                                <rect key="frame" x="243" y="73" width="114" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="TVH-Qa-iTj"/>
+                                    <constraint firstAttribute="height" constant="21" id="uz3-tr-xsd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Dq1-vB-zW3" firstAttribute="centerX" secondItem="Bq3-jE-xJc" secondAttribute="centerX" id="BWJ-SY-e5S"/>
                             <constraint firstItem="rwj-VN-WWn" firstAttribute="centerY" secondItem="Bq3-jE-xJc" secondAttribute="centerY" id="XNs-a5-skw"/>
+                            <constraint firstItem="rwj-VN-WWn" firstAttribute="top" secondItem="Dq1-vB-zW3" secondAttribute="bottom" constant="46" id="Zv8-o8-FWq"/>
                             <constraint firstItem="rwj-VN-WWn" firstAttribute="centerX" secondItem="Bq3-jE-xJc" secondAttribute="centerX" id="n72-79-HQN"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="7Uo-Zm-otf" id="PvJ-cr-8Th"/>
+                        <outlet property="cancelButton" destination="vYV-hR-gHL" id="jZb-Si-HbZ"/>
                         <outlet property="stickyView" destination="rwj-VN-WWn" id="7RE-q1-afA"/>
+                        <outlet property="taskDate" destination="Dq1-vB-zW3" id="GQW-EA-Twe"/>
                         <outlet property="taskText" destination="aYn-8o-76P" id="3K1-S1-BJi"/>
-                        <outletCollection property="StickyHidingConstraints" destination="Lzu-iD-f1D" collectionClass="NSMutableArray" id="Qef-EN-lfU"/>
-                        <outletCollection property="StickyHidingConstraints" destination="0C3-5H-qdr" collectionClass="NSMutableArray" id="FGA-TL-DJt"/>
-                        <outletCollection property="StickyPresentConstraints" destination="Cwq-El-L0D" collectionClass="NSMutableArray" id="9S3-n0-CtU"/>
-                        <outletCollection property="StickyPresentConstraints" destination="qhy-I9-OjZ" collectionClass="NSMutableArray" id="nkn-Nt-SYt"/>
-                        <outletCollection property="ButtonHidingConstraints" destination="UPW-MX-9bJ" collectionClass="NSMutableArray" id="iA5-Jt-9Wo"/>
-                        <outletCollection property="ButtonHidingConstraints" destination="Bup-GS-Y3v" collectionClass="NSMutableArray" id="FOZ-8e-Pn3"/>
-                        <outletCollection property="ButtonPresentConstraints" destination="0N2-7a-mpE" collectionClass="NSMutableArray" id="mNk-Qd-yKh"/>
-                        <outletCollection property="ButtonPresentConstraints" destination="XAm-j4-FnB" collectionClass="NSMutableArray" id="0CB-86-Hik"/>
+                        <outletCollection property="intentionConstraints" destination="Cwq-El-L0D" collectionClass="NSMutableArray" id="mOf-1P-NTc"/>
+                        <outletCollection property="intentionConstraints" destination="qhy-I9-OjZ" collectionClass="NSMutableArray" id="1qv-FE-0CT"/>
+                        <outletCollection property="intentionConstraints" destination="0N2-7a-mpE" collectionClass="NSMutableArray" id="XIN-Sg-rSA"/>
+                        <outletCollection property="intentionConstraints" destination="XAm-j4-FnB" collectionClass="NSMutableArray" id="sOw-Gy-thK"/>
+                        <outletCollection property="easeConstraints" destination="Lzu-iD-f1D" collectionClass="NSMutableArray" id="sdm-i6-IEQ"/>
+                        <outletCollection property="easeConstraints" destination="0C3-5H-qdr" collectionClass="NSMutableArray" id="Rr4-b1-cXe"/>
+                        <outletCollection property="easeConstraints" destination="Bup-GS-Y3v" collectionClass="NSMutableArray" id="02a-Ef-teg"/>
+                        <outletCollection property="easeConstraints" destination="UPW-MX-9bJ" collectionClass="NSMutableArray" id="R7m-1n-g9h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IbK-Vr-cXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

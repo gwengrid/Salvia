@@ -10,32 +10,31 @@ import UIKit
 import Colours
 
 class StickyViewController: UIViewController, UIGestureRecognizerDelegate, UITextViewDelegate {
-    var taskkeeper: TaskKeeper!
+    typealias Layout = StickyLayout
+    typealias Paradigm = StickyParadigm
 
-    var presentationState: StickyState = .Hiding {
+    var taskkeeper: TaskKeeper!
+    var currentTask: Task?
+
+    var layout: Layout!
+
+    var paradigm: Paradigm = .Ease {
         didSet {
-//            let isHiding = self.presentationState == .Hiding
-//            let stickyRemove = isHiding ? self.StickyPresentConstraints : self.StickyHidingConstraints
-//            let stickyAdd = isHiding ? self.StickyHidingConstraints : self.StickyPresentConstraints
-//            let buttonRemove = isHiding ? self.ButtonPresentConstraints : self.ButtonHidingConstraints
-//            let buttonAdd = isHiding ? self.ButtonHidingConstraints : self.ButtonPresentConstraints
-//
-//            UIView.animateWithDuration(0.5) { () -> Void in
-//                self.presentationStateChanged?(self.presentationState)
-//                self.taskText.alpha = isHiding ? 0 : 1
-//
-//                self.stickyView.removeConstraints(stickyRemove)
-//                self.addButton.removeConstraints(buttonRemove)
-//
-//                self.stickyView.addConstraints(stickyAdd)
-//                self.addButton.addConstraints(buttonAdd)
-//
-//                self.stickyView.backgroundColor = self.stickyColours[0]
-//                self.view.layoutIfNeeded()
-//            }
+            layout.paradigm = paradigm
+
+            UIView.animateWithDuration(0.5) { () -> Void in
+                self.paradigmChanged?(self.paradigm)
+                self.taskText.alpha = self.layout.taskTextAlpha
+                self.taskText.editable = self.layout.taskTextEditable
+                self.taskDate.alpha = self.layout.taskDateAlpha
+                self.cancelButton.alpha = self.layout.cancelButtonAlpha
+                
+                self.stickyView.backgroundColor = self.stickyColours[0]
+                self.view.layoutIfNeeded()
+            }
         }
     }
-    var presentationStateChanged:((StickyState) -> ())?
+    var paradigmChanged:((Paradigm) -> ())?
     let stickyColours = [UIColor(hex:"FFE56F"), UIColor(hex: "6FF2FF"), UIColor(hex: "FF87FB"), UIColor(hex: "93FF6F")]
     var stickyIndex = 0
 
@@ -60,24 +59,33 @@ class StickyViewController: UIViewController, UIGestureRecognizerDelegate, UITex
     var quoteIndex = 0
 
     @IBOutlet weak var taskText: UITextView!
+    @IBOutlet weak var taskDate: UILabel!
     
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var stickyView: UIView!
-    @IBOutlet var StickyPresentConstraints: [NSLayoutConstraint]!
-    @IBOutlet var StickyHidingConstraints: [NSLayoutConstraint]!
 
-    @IBOutlet var ButtonPresentConstraints: [NSLayoutConstraint]!
-    @IBOutlet var ButtonHidingConstraints: [NSLayoutConstraint]!
+    @IBOutlet var easeConstraints: [NSLayoutConstraint]!
+    @IBOutlet var intentionConstraints: [NSLayoutConstraint]!
 
     required init?(coder aDecoder: NSCoder) {
+        paradigmChanged = nil
         super.init(coder: aDecoder)
-        presentationStateChanged = nil
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        layout = Layout(paradigm:paradigm,
+            easeConstraints: easeConstraints,
+            intentionConstraints:intentionConstraints,
+            arrivedConstraints:intentionConstraints)
+
         self.view.backgroundColor = UIColor.clearColor()
-        self.addButton.clipsToBounds = false
+        
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .NoStyle
+        self.taskDate.text = formatter.stringFromDate(NSDate.today()!)
 
         let dismiss = UITapGestureRecognizer(target:self, action: Selector("dismiss:"))
         dismiss.delegate = self
@@ -95,35 +103,32 @@ class StickyViewController: UIViewController, UIGestureRecognizerDelegate, UITex
 
     @IBAction func dismiss(sender: AnyObject) {
         self.taskText.resignFirstResponder()
-
-        // if no task, hide
-        // if there is task, arrive
-//        self.presentationState = .Hiding
-        self.presentationState = .Arrived
+        self.paradigm = currentTask ? .Arrived : .Ease
     }
     
     @IBAction func addSticky(sender: AnyObject) {
-        if presentationState == .Input {
+        if paradigm == .Intention {
+            self.paradigm = .Arrived
 //            taskkeeper.saveNewTask(self.taskText.text)
 
-            UIView.beginAnimations("Flip", context: nil)
-            UIView.setAnimationDuration(0.5)
-            UIView.setAnimationTransition(.CurlUp, forView: self.stickyView, cache: true)
-            UIView.commitAnimations()
-
-            if ++stickyIndex == stickyColours.count {
-                stickyIndex = 0
-            }
-            self.stickyView.backgroundColor = stickyColours[stickyIndex]
-
-            if ++quoteIndex == placeholder.count {
-                quoteIndex = 0
-            }
-            self.taskText.text = placeholder[quoteIndex]
+//            UIView.beginAnimations("Flip", context: nil)
+//            UIView.setAnimationDuration(0.5)
+//            UIView.setAnimationTransition(.CurlUp, forView: self.stickyView, cache: true)
+//            UIView.commitAnimations()
+//
+//            if ++stickyIndex == stickyColours.count {
+//                stickyIndex = 0
+//            }
+//            self.stickyView.backgroundColor = stickyColours[stickyIndex]
+//
+//            if ++quoteIndex == placeholder.count {
+//                quoteIndex = 0
+//            }
+//            self.taskText.text = placeholder[quoteIndex]
 
         } else {
             self.taskText.text = "What do you want to do?"
-            self.presentationState = .Input
+            self.paradigm = .Intention
         }
     }
 
@@ -142,5 +147,3 @@ class StickyViewController: UIViewController, UIGestureRecognizerDelegate, UITex
         }
     }
 }
-
-

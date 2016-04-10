@@ -9,6 +9,13 @@
 import Foundation
 
 extension NSDate {
+    struct Date {
+        static let formatterShortDate = NSDateFormatter(dateFormat: "dd-MM-yyyy")
+    }
+    var shortDate: String {
+        return Date.formatterShortDate.stringFromDate(self)
+    }
+
     class func today() -> NSDate? {
         let cal = NSCalendar.currentCalendar()
         let componenets = cal.components([.Era, .Year, .Month, .Day], fromDate: NSDate())
@@ -16,5 +23,12 @@ extension NSDate {
             return today
         }
         return nil
+    }
+}
+
+extension NSDateFormatter {
+    convenience init(dateFormat: String) {
+        self.init()
+        self.dateFormat = dateFormat
     }
 }
