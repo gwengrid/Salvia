@@ -22,7 +22,6 @@
 		1B70FB6E1C507A3800DD24EA /* SalviaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B70FB6D1C507A3800DD24EA /* SalviaUITests.swift */; };
 		1BA23BA61C6C73C400FF9059 /* TaskKeeper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BA51C6C73C400FF9059 /* TaskKeeper.swift */; };
 		1BA23BA81C6D16DF00FF9059 /* NewTask.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BA23BA71C6D16DF00FF9059 /* NewTask.xib */; };
-		1BA23BAA1C6D191700FF9059 /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BA91C6D191700FF9059 /* NewTaskViewController.swift */; };
 		1BA23BB31C6D59E200FF9059 /* Task+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BB11C6D59E200FF9059 /* Task+CoreDataProperties.swift */; };
 		1BA23BB41C6D59E200FF9059 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BB21C6D59E200FF9059 /* Task.swift */; };
 		1BA23BC21C6F05D900FF9059 /* NSDate+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BC11C6F05D900FF9059 /* NSDate+Helper.swift */; };
@@ -70,7 +69,6 @@
 		1B70FB7B1C51E24200DD24EA /* Salvia-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Salvia-Bridging-Header.h"; sourceTree = "<group>"; };
 		1BA23BA51C6C73C400FF9059 /* TaskKeeper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskKeeper.swift; sourceTree = "<group>"; };
 		1BA23BA71C6D16DF00FF9059 /* NewTask.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewTask.xib; sourceTree = "<group>"; };
-		1BA23BA91C6D191700FF9059 /* NewTaskViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
 		1BA23BB11C6D59E200FF9059 /* Task+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		1BA23BB21C6D59E200FF9059 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1BA23BC11C6F05D900FF9059 /* NSDate+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Helper.swift"; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 				1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */,
 				1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */,
 				1BD4858B1C90DFBE00343A3F /* TodayViewModel.swift */,
-				1BA23BA91C6D191700FF9059 /* NewTaskViewController.swift */,
 				1B1E8A961CB3641800D94961 /* StickyViewController.swift */,
 				1B2C452A1CB9A950000F9263 /* StickyLayout.swift */,
 				1B70FB4E1C507A3800DD24EA /* Main.storyboard */,
@@ -389,7 +386,6 @@
 				1BA23BB41C6D59E200FF9059 /* Task.swift in Sources */,
 				1B70FB531C507A3800DD24EA /* Salvia.xcdatamodeld in Sources */,
 				1B2C452B1CB9A950000F9263 /* StickyLayout.swift in Sources */,
-				1BA23BAA1C6D191700FF9059 /* NewTaskViewController.swift in Sources */,
 				1B70FB4D1C507A3800DD24EA /* TodayViewController.swift in Sources */,
 				1BA23BB31C6D59E200FF9059 /* Task+CoreDataProperties.swift in Sources */,
 				1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */,

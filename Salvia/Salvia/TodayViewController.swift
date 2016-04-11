@@ -17,11 +17,7 @@ class TodayViewController: UIViewController {
     }
     var todayState: TodayState! {
         didSet {
-            if todayState == TodayState.Present, let taskDescription = currentTask?.task {
-                todayTaskLabel.text = taskDescription
-            } else {
-                todayTaskLabel.text = todayState.defaultString
-            }
+            todayTaskLabel.text = todayState.defaultString
 
             if let image = todayState.defaultImage {
                 self.happyFaceView.image = image

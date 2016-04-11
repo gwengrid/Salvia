@@ -103,10 +103,11 @@ class StickyViewController: UIViewController, UIGestureRecognizerDelegate, UITex
 
     @IBAction func dismiss(sender: AnyObject) {
         self.taskText.resignFirstResponder()
-        self.paradigm = currentTask ? .Arrived : .Ease
+        self.paradigm = currentTask != nil ? .Arrived : .Ease
     }
     
     @IBAction func addSticky(sender: AnyObject) {
+
         if paradigm == .Intention {
             self.paradigm = .Arrived
 //            taskkeeper.saveNewTask(self.taskText.text)

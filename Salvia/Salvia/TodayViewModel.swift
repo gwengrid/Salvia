@@ -12,7 +12,6 @@ import UIKit
 enum TodayState {
     case Empty
     case Completed
-    case Present
 
     var defaultString: String {
         switch self {
