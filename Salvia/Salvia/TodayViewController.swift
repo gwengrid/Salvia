@@ -10,21 +10,28 @@ import UIKit
 
 class TodayViewController: UIViewController {
     var taskKeeper: TaskKeeper?
+    let childVC: StickyViewController
     var currentTask: Task? {
         didSet {
             todayState = TodayState(task: currentTask)
         }
     }
-    var todayState: TodayState! {
+    var headspace: Headspace! {
         didSet {
-            todayTaskLabel.text = todayState.defaultString
-
-            if let image = todayState.defaultImage {
+            todayTaskLabel.text = headspace.defaultString
+            if let image = headspace.defaultImage {
                 self.happyFaceView.image = image
             }
+
+            let transform = headspace == Headspace.Available ?  CGAffineTransformMakeTranslation(0, 450) : CGAffineTransformIdentity
+            let opacity = headspace == Headspace.Available ?  0 : 1
+
+            childVC.view.transform = transform
+            self.todayTaskLabel.alpha = opacity
+            self.happyFaceView.alpha = opacity
         }
     }
-    
+
     @IBOutlet weak var peekingView: UIView!
     @IBOutlet weak var todayTaskLabel: UILabel!
     @IBOutlet weak var happyFaceView: UIImageView!

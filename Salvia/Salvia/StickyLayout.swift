@@ -24,9 +24,6 @@ struct StickyLayout {
         }
     }
 
-    let easeConstraints: [NSLayoutConstraint]
-    let intentionConstraints: [NSLayoutConstraint]
-    let arrivedConstraints: [NSLayoutConstraint]
 
     var taskTextAlpha: CGFloat {
         switch paradigm {
@@ -74,5 +71,10 @@ struct StickyLayout {
             return arrivedConstraints
         }
     }
+
+    let easeConstraints: [NSLayoutConstraint]
+    let intentionConstraints: [NSLayoutConstraint]
+    let arrivedConstraints: [NSLayoutConstraint]
+
 }
 
