@@ -29,5 +29,17 @@ enum Headstate {
         case .Available: return nil
         }
     }
+}
 
+extension Headstate {
+    init(intention: Intention){
+        switch intention {
+        case .Being:
+            self = .Empty
+        case .Doing, .Setting:
+            self = .Available
+        case .Fulfilled:
+            self = .Enough
+        }
+    }
 }

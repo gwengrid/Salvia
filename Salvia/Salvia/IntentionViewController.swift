@@ -11,10 +11,11 @@ import UIKit
 class IntentionViewController: UIViewController {
     private let keeper: TaskKeeper
 
+    var intentionChanged:((Intention) -> ())?
     let focus: Task?
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("why are you here? in any case, here's a nice quote: If you just wake up wake up wake up wake up wake up wake up one day you’ll forget why.")
+        fatalError("If you just wake up wake up wake up wake up wake up wake up one day you’ll forget why.")
     }
 
     required init(keeper: TaskKeeper) {

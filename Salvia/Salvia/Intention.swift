@@ -12,6 +12,7 @@ enum Intention {
     case Being
     case Setting
     case Doing
+    case Fulfilled
 }
 
 enum Interaction {
@@ -36,7 +37,7 @@ struct Layout {
 
     var definingConstraints: [NSLayoutConstraint] {
         switch intention {
-        case .Being:
+        case .Being, .Fulfilled:
             return beingLayout
         case .Setting:
             return settingLayout

@@ -3,7 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+            <string>Montserrat-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntentionViewController" customModule="Salvia" customModuleProvider="target">
             <connections>
@@ -14,7 +21,98 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flT-P0-Sya">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-zA-xLi">
+                            <rect key="frame" x="140" y="140" width="321" height="321"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dV3-5v-Fmf">
+                                    <rect key="frame" x="3" y="274" width="44" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="dZK-Cf-VbS"/>
+                                        <constraint firstAttribute="height" constant="44" id="wQz-h5-lay"/>
+                                    </constraints>
+                                    <state key="normal" image="XButton"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wY-S7-E4E">
+                                    <rect key="frame" x="280" y="280" width="33" height="33"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="5jr-ax-x8N"/>
+                                        <constraint firstAttribute="height" constant="33" id="EDX-7o-AcQ"/>
+                                        <constraint firstAttribute="width" constant="44" id="Ihb-3v-yuW"/>
+                                        <constraint firstAttribute="width" constant="33" id="Www-g0-MeZ"/>
+                                    </constraints>
+                                    <state key="normal" image="AddButton"/>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="EDX-7o-AcQ"/>
+                                            <exclude reference="Www-g0-MeZ"/>
+                                        </mask>
+                                    </variation>
+                                </button>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" misplaced="YES" text="What do you want to do?" translatesAutoresizingMaskIntoConstraints="NO" id="JN3-hH-Tti">
+                                    <rect key="frame" x="24" y="27" width="262" height="212"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="212" id="1yc-f1-oKl"/>
+                                    </constraints>
+                                    <color key="textColor" red="0.51372549020000002" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="0.8980392157" blue="0.43529411759999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="JN3-hH-Tti" firstAttribute="top" secondItem="Yhd-zA-xLi" secondAttribute="top" constant="27" id="27J-PQ-PTd"/>
+                                <constraint firstAttribute="trailing" secondItem="JN3-hH-Tti" secondAttribute="trailing" constant="20" id="5ot-dt-wTv"/>
+                                <constraint firstItem="JN3-hH-Tti" firstAttribute="leading" secondItem="Yhd-zA-xLi" secondAttribute="leading" constant="20" id="Inz-3C-eZP"/>
+                                <constraint firstAttribute="trailing" secondItem="9wY-S7-E4E" secondAttribute="trailing" constant="8" id="Jfe-7r-CJs"/>
+                                <constraint firstAttribute="bottom" secondItem="dV3-5v-Fmf" secondAttribute="bottom" constant="3" id="L0z-bo-JGR"/>
+                                <constraint firstItem="dV3-5v-Fmf" firstAttribute="leading" secondItem="Yhd-zA-xLi" secondAttribute="leading" constant="3" id="cdx-gc-MLS"/>
+                                <constraint firstItem="9wY-S7-E4E" firstAttribute="centerX" secondItem="Yhd-zA-xLi" secondAttribute="centerX" id="g0T-qw-fLQ"/>
+                                <constraint firstAttribute="bottom" secondItem="9wY-S7-E4E" secondAttribute="bottom" constant="8" id="j2i-hj-KXj"/>
+                                <constraint firstAttribute="width" constant="321" id="ngh-i7-qm8"/>
+                                <constraint firstAttribute="height" constant="321" id="pxC-x2-UOO"/>
+                                <constraint firstItem="9wY-S7-E4E" firstAttribute="centerY" secondItem="Yhd-zA-xLi" secondAttribute="top" id="vG4-kR-zdR"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="j2i-hj-KXj"/>
+                                    <exclude reference="Jfe-7r-CJs"/>
+                                </mask>
+                            </variation>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6l-Ah-apP">
+                            <rect key="frame" x="243" y="73" width="114" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="WaR-Yx-UDQ"/>
+                                <constraint firstAttribute="width" constant="114" id="yEG-zM-MSY"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Yhd-zA-xLi" firstAttribute="centerX" secondItem="flT-P0-Sya" secondAttribute="centerX" id="DGH-Qu-d5n"/>
+                        <constraint firstItem="Yhd-zA-xLi" firstAttribute="top" secondItem="F6l-Ah-apP" secondAttribute="bottom" constant="46" id="I4N-yB-xHr"/>
+                        <constraint firstItem="Yhd-zA-xLi" firstAttribute="centerY" secondItem="flT-P0-Sya" secondAttribute="centerY" id="aGZ-fC-b1C"/>
+                        <constraint firstItem="F6l-Ah-apP" firstAttribute="centerX" secondItem="flT-P0-Sya" secondAttribute="centerX" id="q85-Ul-vSP"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="flT-P0-Sya" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0a0-Xc-B3H"/>
+                <constraint firstAttribute="bottom" secondItem="flT-P0-Sya" secondAttribute="bottom" id="Jcg-VM-66K"/>
+                <constraint firstAttribute="trailing" secondItem="flT-P0-Sya" secondAttribute="trailing" id="XLK-ch-Hvc"/>
+                <constraint firstItem="flT-P0-Sya" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="edB-za-4y6"/>
+            </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="AddButton" width="60" height="60"/>
+        <image name="XButton" width="33" height="33"/>
+    </resources>
 </document>
