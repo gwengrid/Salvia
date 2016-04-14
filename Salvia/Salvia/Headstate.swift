@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum Headspace {
+enum Headstate {
     case Empty
     case Available
     case Enough

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0179561CBF1106006A662C /* HeadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0179541CBF1106006A662C /* HeadViewController.swift */; };
+		1B0179571CBF1106006A662C /* HeadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B0179551CBF1106006A662C /* HeadViewController.xib */; };
+		1B0179601CBF12A7006A662C /* IntentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B01795E1CBF12A7006A662C /* IntentionViewController.swift */; };
+		1B0179611CBF12A7006A662C /* IntentionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B01795F1CBF12A7006A662C /* IntentionViewController.xib */; };
+		1B0179651CBF1833006A662C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0179641CBF1833006A662C /* Constants.swift */; };
 		1B1E8A971CB3641800D94961 /* StickyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E8A961CB3641800D94961 /* StickyViewController.swift */; };
 		1B1E8A991CB457DC00D94961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E8A981CB457DC00D94961 /* Assets.xcassets */; };
 		1B2460A31C76A16A00BC8B78 /* Envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B2460A21C76A16A00BC8B78 /* Envelope.png */; };
@@ -26,7 +31,7 @@
 		1BA23BB41C6D59E200FF9059 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BB21C6D59E200FF9059 /* Task.swift */; };
 		1BA23BC21C6F05D900FF9059 /* NSDate+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA23BC11C6F05D900FF9059 /* NSDate+Helper.swift */; };
 		1BB234301CBC6E53003ABF19 /* Intention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB2342F1CBC6E53003ABF19 /* Intention.swift */; };
-		1BD4858C1C90DFBE00343A3F /* Headspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4858B1C90DFBE00343A3F /* Headspace.swift */; };
+		1BD4858C1C90DFBE00343A3F /* Headstate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4858B1C90DFBE00343A3F /* Headstate.swift */; };
 		8F08BC224E7465361F358643 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3601815A49911CC221A9AD5F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B0179541CBF1106006A662C /* HeadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadViewController.swift; sourceTree = "<group>"; };
+		1B0179551CBF1106006A662C /* HeadViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeadViewController.xib; sourceTree = "<group>"; };
+		1B01795E1CBF12A7006A662C /* IntentionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntentionViewController.swift; sourceTree = "<group>"; };
+		1B01795F1CBF12A7006A662C /* IntentionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntentionViewController.xib; sourceTree = "<group>"; };
+		1B0179641CBF1833006A662C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1B1E8A961CB3641800D94961 /* StickyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyViewController.swift; sourceTree = "<group>"; };
 		1B1E8A981CB457DC00D94961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B2460A21C76A16A00BC8B78 /* Envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Envelope.png; path = Assets/Envelope.png; sourceTree = "<group>"; };
@@ -74,7 +84,7 @@
 		1BA23BB21C6D59E200FF9059 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1BA23BC11C6F05D900FF9059 /* NSDate+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Helper.swift"; sourceTree = "<group>"; };
 		1BB2342F1CBC6E53003ABF19 /* Intention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intention.swift; sourceTree = "<group>"; };
-		1BD4858B1C90DFBE00343A3F /* Headspace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Headspace.swift; sourceTree = "<group>"; };
+		1BD4858B1C90DFBE00343A3F /* Headstate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Headstate.swift; sourceTree = "<group>"; };
 		3601815A49911CC221A9AD5F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BEE66EF0E270BEB16A94FFB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4AEE79AC1EEF15E5E47BDDDA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,9 +154,13 @@
 			children = (
 				1B6A36F71CA9EBC200D4B299 /* Resources */,
 				1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */,
-				1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */,
-				1BD4858B1C90DFBE00343A3F /* Headspace.swift */,
+				1B0179541CBF1106006A662C /* HeadViewController.swift */,
+				1B0179551CBF1106006A662C /* HeadViewController.xib */,
+				1BD4858B1C90DFBE00343A3F /* Headstate.swift */,
+				1B01795E1CBF12A7006A662C /* IntentionViewController.swift */,
+				1B01795F1CBF12A7006A662C /* IntentionViewController.xib */,
 				1BB2342F1CBC6E53003ABF19 /* Intention.swift */,
+				1B70FB4C1C507A3800DD24EA /* TodayViewController.swift */,
 				1B2C452A1CB9A950000F9263 /* StickyLayout.swift */,
 				1B1E8A961CB3641800D94961 /* StickyViewController.swift */,
 				1B70FB4E1C507A3800DD24EA /* Main.storyboard */,
@@ -159,6 +173,7 @@
 				1BA23BB11C6D59E200FF9059 /* Task+CoreDataProperties.swift */,
 				1BA23BB21C6D59E200FF9059 /* Task.swift */,
 				1BA23BC11C6F05D900FF9059 /* NSDate+Helper.swift */,
+				1B0179641CBF1833006A662C /* Constants.swift */,
 			);
 			path = Salvia;
 			sourceTree = "<group>";
@@ -305,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0179571CBF1106006A662C /* HeadViewController.xib in Resources */,
 				1BA23BA81C6D16DF00FF9059 /* NewTask.xib in Resources */,
 				1B2460A31C76A16A00BC8B78 /* Envelope.png in Resources */,
 				1B6A36FB1CA9EBD900D4B299 /* Montserrat-Regular.ttf in Resources */,
@@ -312,6 +328,7 @@
 				1B1E8A991CB457DC00D94961 /* Assets.xcassets in Resources */,
 				1B70FB581C507A3800DD24EA /* LaunchScreen.storyboard in Resources */,
 				1B70FB501C507A3800DD24EA /* Main.storyboard in Resources */,
+				1B0179611CBF12A7006A662C /* IntentionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +401,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B0179601CBF12A7006A662C /* IntentionViewController.swift in Sources */,
+				1B0179561CBF1106006A662C /* HeadViewController.swift in Sources */,
 				1BA23BC21C6F05D900FF9059 /* NSDate+Helper.swift in Sources */,
 				1B1E8A971CB3641800D94961 /* StickyViewController.swift in Sources */,
 				1BA23BB41C6D59E200FF9059 /* Task.swift in Sources */,
@@ -393,7 +412,8 @@
 				1BA23BB31C6D59E200FF9059 /* Task+CoreDataProperties.swift in Sources */,
 				1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */,
 				1BA23BA61C6C73C400FF9059 /* TaskKeeper.swift in Sources */,
-				1BD4858C1C90DFBE00343A3F /* Headspace.swift in Sources */,
+				1B0179651CBF1833006A662C /* Constants.swift in Sources */,
+				1BD4858C1C90DFBE00343A3F /* Headstate.swift in Sources */,
 				1BB234301CBC6E53003ABF19 /* Intention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

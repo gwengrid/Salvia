@@ -15,14 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("Today") as? TodayViewController
-        if let todayVC = vc {
-            todayVC.taskKeeper = TaskKeeper(db: coreDataStorage())
+        let db = TaskKeeper(db: coreDataStorage())
+        let intentionSpace = IntentionViewController(keeper: db)
+        let headSpace = HeadViewController(intent: intentionSpace)
+        
+        self.window?.rootViewController = headSpace
+        self.window?.makeKeyAndVisible()
 
-            self.window?.rootViewController = todayVC
-            self.window?.makeKeyAndVisible()
-        }
         return true
     }
 

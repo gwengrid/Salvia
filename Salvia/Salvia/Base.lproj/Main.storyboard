@@ -75,9 +75,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hoh-Yb-zSy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="BUI-zV-Mdx"/>
                             <constraint firstItem="hoh-Yb-zSy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HI0-XP-3FT"/>
                             <constraint firstItem="hoh-Yb-zSy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QTS-vj-49u"/>
+                            <constraint firstItem="hoh-Yb-zSy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="XZh-i9-Ld6"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
