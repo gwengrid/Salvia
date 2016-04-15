@@ -14,15 +14,15 @@ class HeadViewController: UIViewController {
     @IBOutlet weak var happyText: UILabel!
 
     private let intentionSpace: IntentionViewController
-    private var headstate: Headstate = .Empty {
+    var headstate: Headstate = .Empty {
         didSet {
             self.intentionSpace.view.transform = headstate == .Available ? CGAffineTransformIdentity : CGAffineTransformMakeTranslation(0, 450)
             let opacity: CGFloat = headstate == .Available ? 0 : 1
 
-            self.happyFace.image = headstate == .Empty ? UIImage(asset: .Serene) : UIImage(asset: .Congrats)
+            self.happyFace.image = headstate == .Enough ? UIImage(asset: .Congrats) : UIImage(asset: .Serene)
             self.happyFace.alpha = opacity
 
-            self.happyText.text = headstate == .Empty ? "Nothing to do today." : "Enjoy the rest of your day!"
+            self.happyText.text = headstate == .Enough ? "Enjoy the rest of your day!" : "Nothing to do today."
             self.happyText.alpha = opacity
         }
     }
@@ -38,8 +38,8 @@ class HeadViewController: UIViewController {
         self.addChildViewController(self.intentionSpace)
         self.view.addSubview(self.intentionSpace.view)
         self.intentionSpace.didMoveToParentViewController(self)
-        self.intentionSpace.intentionChanged = { (intention: Intention) in
-            self.headstate = Headstate(intention:intention)
+        self.intentionSpace.intentionChanged = { (intent: Intention) in
+            self.headstate = intent == Intention.Being ? Headstate.Empty : Headstate.Available
         }
     }
 

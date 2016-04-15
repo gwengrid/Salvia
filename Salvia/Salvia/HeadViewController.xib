@@ -47,8 +47,8 @@
                             <nil key="highlightedColor"/>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="VGg-TF-u5G"/>
                                     <exclude reference="LRY-7q-mcn"/>
+                                    <exclude reference="VGg-TF-u5G"/>
                                 </mask>
                             </variation>
                         </label>
@@ -57,7 +57,6 @@
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="1xW-rH-bqj"/>
                         <constraint firstItem="N0J-SH-UGg" firstAttribute="top" secondItem="C5X-Qu-FL6" secondAttribute="bottom" constant="27" id="6fX-sS-S72"/>
-                        <constraint firstItem="C5X-Qu-FL6" firstAttribute="leading" secondItem="VdM-lu-bNn" secondAttribute="leading" constant="20" id="DGb-gt-9HP"/>
                         <constraint firstItem="N0J-SH-UGg" firstAttribute="centerX" secondItem="VdM-lu-bNn" secondAttribute="centerX" id="EEg-Yw-HyM"/>
                         <constraint firstItem="C5X-Qu-FL6" firstAttribute="centerX" secondItem="VdM-lu-bNn" secondAttribute="centerX" id="px9-xw-Bsf"/>
                         <constraint firstAttribute="height" constant="371" id="rtd-G4-a35"/>
@@ -69,7 +68,6 @@
                         <mask key="constraints">
                             <exclude reference="1xW-rH-bqj"/>
                             <exclude reference="sJK-Ii-7Zg"/>
-                            <exclude reference="DGb-gt-9HP"/>
                         </mask>
                     </variation>
                 </view>

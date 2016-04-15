@@ -36,9 +36,9 @@ extension Headstate {
         switch intention {
         case .Being:
             self = .Empty
-        case .Doing, .Setting:
+        case .Setting:
             self = .Available
-        case .Fulfilled:
+        case .Doing:
             self = .Enough
         }
     }

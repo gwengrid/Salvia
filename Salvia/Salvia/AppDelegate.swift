@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let db = TaskKeeper(db: coreDataStorage())
         let intentionSpace = IntentionViewController(keeper: db)
         let headSpace = HeadViewController(intent: intentionSpace)
-        
+
         self.window?.rootViewController = headSpace
         self.window?.makeKeyAndVisible()
 

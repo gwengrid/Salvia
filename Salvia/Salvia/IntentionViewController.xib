@@ -14,7 +14,29 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntentionViewController" customModule="Salvia" customModuleProvider="target">
             <connections>
+                <outlet property="cancelButton" destination="dV3-5v-Fmf" id="sdY-py-SdZ"/>
+                <outlet property="settingButton" destination="9wY-S7-E4E" id="S4t-GO-TWq"/>
+                <outlet property="space" destination="Yhd-zA-xLi" id="SHn-hD-CZd"/>
+                <outlet property="today" destination="F6l-Ah-apP" id="oVP-wc-NHY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="beingLayout" destination="g0T-qw-fLQ" collectionClass="NSMutableArray" id="fOM-d1-WBu"/>
+                <outletCollection property="beingLayout" destination="vG4-kR-zdR" collectionClass="NSMutableArray" id="lDm-qa-Dtg"/>
+                <outletCollection property="beingLayout" destination="5jr-ax-x8N" collectionClass="NSMutableArray" id="0V7-3M-ciF"/>
+                <outletCollection property="beingLayout" destination="Ihb-3v-yuW" collectionClass="NSMutableArray" id="LRE-3B-VJh"/>
+                <outletCollection property="settingLayout" destination="Jfe-7r-CJs" collectionClass="NSMutableArray" id="7cs-Px-3Sa"/>
+                <outletCollection property="settingLayout" destination="j2i-hj-KXj" collectionClass="NSMutableArray" id="X3U-fx-NnZ"/>
+                <outletCollection property="settingLayout" destination="EDX-7o-AcQ" collectionClass="NSMutableArray" id="ajR-er-vTU"/>
+                <outletCollection property="settingLayout" destination="Www-g0-MeZ" collectionClass="NSMutableArray" id="llz-23-bbo"/>
+                <outletCollection property="doingLayout" destination="VBp-g3-yLf" collectionClass="NSMutableArray" id="Ztj-tH-pqt"/>
+                <outletCollection property="doingLayout" destination="JhG-0V-iC9" collectionClass="NSMutableArray" id="NOr-Yg-R9T"/>
+                <outletCollection property="doingLayout" destination="Jfe-7r-CJs" collectionClass="NSMutableArray" id="lLO-6v-n7o"/>
+                <outletCollection property="doingLayout" destination="j2i-hj-KXj" collectionClass="NSMutableArray" id="FLX-Ds-hC2"/>
+                <outletCollection property="beingLayout" destination="ngh-i7-qm8" collectionClass="NSMutableArray" id="j4c-pb-w3G"/>
+                <outletCollection property="settingLayout" destination="ngh-i7-qm8" collectionClass="NSMutableArray" id="Wcj-LW-NZO"/>
+                <outletCollection property="beingLayout" destination="pxC-x2-UOO" collectionClass="NSMutableArray" id="Xc5-HI-cdB"/>
+                <outletCollection property="settingLayout" destination="pxC-x2-UOO" collectionClass="NSMutableArray" id="jWM-fx-X8A"/>
+                <outletCollection property="doingLayout" destination="EDX-7o-AcQ" collectionClass="NSMutableArray" id="CIb-5R-LnF"/>
+                <outletCollection property="doingLayout" destination="Www-g0-MeZ" collectionClass="NSMutableArray" id="f6Z-tS-dpd"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -35,6 +57,9 @@
                                         <constraint firstAttribute="height" constant="44" id="wQz-h5-lay"/>
                                     </constraints>
                                     <state key="normal" image="XButton"/>
+                                    <connections>
+                                        <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="MM7-ci-Zls"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wY-S7-E4E">
                                     <rect key="frame" x="280" y="280" width="33" height="33"/>
@@ -51,6 +76,9 @@
                                             <exclude reference="Www-g0-MeZ"/>
                                         </mask>
                                     </variation>
+                                    <connections>
+                                        <action selector="settingAction:" destination="-1" eventType="touchUpInside" id="MPp-Rd-TxI"/>
+                                    </connections>
                                 </button>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" misplaced="YES" text="What do you want to do?" translatesAutoresizingMaskIntoConstraints="NO" id="JN3-hH-Tti">
                                     <rect key="frame" x="24" y="27" width="262" height="212"/>
@@ -69,7 +97,9 @@
                                 <constraint firstAttribute="trailing" secondItem="JN3-hH-Tti" secondAttribute="trailing" constant="20" id="5ot-dt-wTv"/>
                                 <constraint firstItem="JN3-hH-Tti" firstAttribute="leading" secondItem="Yhd-zA-xLi" secondAttribute="leading" constant="20" id="Inz-3C-eZP"/>
                                 <constraint firstAttribute="trailing" secondItem="9wY-S7-E4E" secondAttribute="trailing" constant="8" id="Jfe-7r-CJs"/>
+                                <constraint firstAttribute="width" constant="340" id="JhG-0V-iC9"/>
                                 <constraint firstAttribute="bottom" secondItem="dV3-5v-Fmf" secondAttribute="bottom" constant="3" id="L0z-bo-JGR"/>
+                                <constraint firstAttribute="height" constant="340" id="VBp-g3-yLf"/>
                                 <constraint firstItem="dV3-5v-Fmf" firstAttribute="leading" secondItem="Yhd-zA-xLi" secondAttribute="leading" constant="3" id="cdx-gc-MLS"/>
                                 <constraint firstItem="9wY-S7-E4E" firstAttribute="centerX" secondItem="Yhd-zA-xLi" secondAttribute="centerX" id="g0T-qw-fLQ"/>
                                 <constraint firstAttribute="bottom" secondItem="9wY-S7-E4E" secondAttribute="bottom" constant="8" id="j2i-hj-KXj"/>
@@ -79,8 +109,10 @@
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
-                                    <exclude reference="j2i-hj-KXj"/>
+                                    <exclude reference="JhG-0V-iC9"/>
+                                    <exclude reference="VBp-g3-yLf"/>
                                     <exclude reference="Jfe-7r-CJs"/>
+                                    <exclude reference="j2i-hj-KXj"/>
                                 </mask>
                             </variation>
                         </view>

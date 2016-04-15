@@ -12,7 +12,6 @@ enum Intention {
     case Being
     case Setting
     case Doing
-    case Fulfilled
 }
 
 enum Interaction {
@@ -22,27 +21,27 @@ enum Interaction {
 }
 
 struct Layout {
-    let beingLayout: [NSLayoutConstraint]
-    let settingLayout: [NSLayoutConstraint]
-    let doingLayout: [NSLayoutConstraint]
-
     var intention: Intention {
         willSet {
             NSLayoutConstraint.deactivateConstraints(definingConstraints)
         }
         didSet {
-            NSLayoutConstraint.deactivateConstraints(definingConstraints)
+            NSLayoutConstraint.activateConstraints(definingConstraints)
         }
     }
 
+    let being: [NSLayoutConstraint]
+    let setting: [NSLayoutConstraint]
+    let doing: [NSLayoutConstraint]
+
     var definingConstraints: [NSLayoutConstraint] {
         switch intention {
-        case .Being, .Fulfilled:
-            return beingLayout
+        case .Being:
+            return being
         case .Setting:
-            return settingLayout
+            return setting
         case .Doing:
-            return doingLayout
+            return doing
         }
     }
     
@@ -58,6 +57,13 @@ struct Layout {
         return intention == .Doing ? 1 : 0
     }
 
+    var taskDateText: String {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .NoStyle
+        return formatter.stringFromDate(NSDate.today()!)
+    }
+
     var cancelButtonAlpha: CGFloat {
         return intention == .Setting ? 1 : 0
     }
@@ -68,7 +74,6 @@ struct Layout {
         }
         return UIImage()
     }
-
 }
 
 
