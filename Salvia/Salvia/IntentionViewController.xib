@@ -15,6 +15,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IntentionViewController" customModule="Salvia" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="dV3-5v-Fmf" id="sdY-py-SdZ"/>
+                <outlet property="intention" destination="JN3-hH-Tti" id="pvA-CJ-y4b"/>
                 <outlet property="settingButton" destination="9wY-S7-E4E" id="S4t-GO-TWq"/>
                 <outlet property="space" destination="Yhd-zA-xLi" id="SHn-hD-CZd"/>
                 <outlet property="today" destination="F6l-Ah-apP" id="oVP-wc-NHY"/>

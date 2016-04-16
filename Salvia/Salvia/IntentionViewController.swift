@@ -22,7 +22,7 @@ class IntentionViewController: UIViewController {
                 self.today.alpha = self.layout.taskDateAlpha
                 self.cancelButton.alpha = self.layout.cancelButtonAlpha
                 self.settingButton.setImage(self.layout.actionButtonImage, forState: .Normal)
-                
+
                 self.view.layoutIfNeeded()
             }
         }
@@ -35,6 +35,7 @@ class IntentionViewController: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var space: UIView!
     @IBOutlet weak var today: UILabel!
+    @IBOutlet weak var intention: UITextView!
 
     @IBOutlet var beingLayout: [NSLayoutConstraint]!
     @IBOutlet var settingLayout: [NSLayoutConstraint]!
@@ -64,9 +65,12 @@ class IntentionViewController: UIViewController {
         switch (intent){
         case .Being:
             intent = .Setting
+        case .Setting:
+            flip()
+            self.space.backgroundColor = self.layout.placeholderColours.next()
+            self.intention.text = self.layout.placeholderText.next()
         case .Doing:
             flip()
-        default: break
         }
     }
 
@@ -88,8 +92,6 @@ extension IntentionViewController {
         UIView.beginAnimations("Flip", context: nil)
         UIView.setAnimationDuration(0.5)
         UIView.setAnimationTransition(.CurlUp, forView: self.space, cache: true)
-        self.space.removeFromSuperview()
-        self.view.addSubview(self.space)
         UIView.commitAnimations()
     }
 }
