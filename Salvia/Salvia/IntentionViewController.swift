@@ -10,18 +10,26 @@ import UIKit
 
 typealias IntentChange = (Intention) -> ()
 
-class IntentionViewController: UIViewController {
+class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     private let keeper: TaskKeeper
     private var layout: Layout!
-    private var intent: Intention = Intention.Being {
+    private var intent: Intention = .Being {
         didSet {
             UIView.animateWithDuration(0.5) { () -> Void in
                 self.layout.intention = self.intent
                 self.intentionChanged?(self.intent)
 
                 self.today.alpha = self.layout.taskDateAlpha
+                self.intention.alpha = self.layout.taskTextAlpha
+                self.intention.editable = self.layout.taskTextEditable
+
                 self.cancelButton.alpha = self.layout.cancelButtonAlpha
                 self.settingButton.setImage(self.layout.actionButtonImage, forState: .Normal)
+                self.settingButton.enabled = self.intent == .Setting ? false : true
+
+                if self.intent != .Setting {
+                    self.space.backgroundColor = self.layout.placeholderColours.array[0]
+                }
 
                 self.view.layoutIfNeeded()
             }
@@ -29,7 +37,14 @@ class IntentionViewController: UIViewController {
     }
 
     var intentionChanged:(IntentChange)?
-    let focus: Task?
+    var focus: Task? {
+        didSet {
+            self.intent = focus != nil ? .Doing : .Being
+            if let todaysFocus = focus {
+                intention.text = todaysFocus.task
+            }
+        }
+    }
 
     @IBOutlet weak var settingButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -58,32 +73,70 @@ class IntentionViewController: UIViewController {
             being:beingLayout,
             setting:settingLayout,
             doing:doingLayout)
+
         self.today.text = layout.taskDateText
+        self.intention.delegate = self
+
+        let dismiss = UITapGestureRecognizer(target:self, action: Selector("cancelAction:"))
+        dismiss.delegate = self
+        self.view.addGestureRecognizer(dismiss)
     }
+
 
     @IBAction func settingAction(sender: AnyObject) {
         switch (intent){
         case .Being:
+            intention.text = "What do you want to do?"
             intent = .Setting
+
         case .Setting:
-            flip()
             self.space.backgroundColor = self.layout.placeholderColours.next()
             self.intention.text = self.layout.placeholderText.next()
+            keeper.saveNewTask(self.intention.text)
+
+            flip()
         case .Doing:
             flip()
+            // TODO: mark task as complete, peel away to show new condition
         }
     }
 
     @IBAction func cancelAction(sender: AnyObject) {
-        switch (intent){
-        case .Being:
-            intent = .Setting
-        case .Doing:
-            flip()
-        default: break
+        if intent != .Setting {
+            return
         }
 
-        intent = .Being
+        self.intention.resignFirstResponder()
+        focus = keeper.fetchNextInQueue()
+        self.intent = focus != nil ? .Doing : .Being
+    }
+
+    // MARK: uitextview delegate
+
+    func textViewDidBeginEditing(textView: UITextView) {
+        textView.text = ""
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.space.transform = CGAffineTransformMakeTranslation(0, -100)
+        }
+    }
+
+    func textViewDidEndEditing(textView: UITextView) {
+        UIView.animateWithDuration(0.5) { () -> Void in
+            self.space.transform = CGAffineTransformIdentity
+        }
+    }
+
+    func textViewDidChange(textView: UITextView) {
+        self.settingButton.enabled = !textView.text.isEmpty
+    }
+
+    // MARK: gesture delegate
+
+    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        if (CGRectContainsPoint(self.space.frame, touch.locationInView(self.space))) {
+            return false
+        }
+        return true
     }
 }
 
