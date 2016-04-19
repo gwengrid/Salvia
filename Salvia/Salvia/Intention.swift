@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Colours
+
 
 enum Intention {
     case Being
@@ -14,11 +16,6 @@ enum Intention {
     case Doing
 }
 
-enum Interaction {
-    case Invisible
-    case Visible
-    case Editable
-}
 
 struct Layout {
     var intention: Intention {
