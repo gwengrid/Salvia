@@ -8,7 +8,7 @@
 
 import UIKit
 
-typealias IntentChange = (Intention) -> ()
+typealias IntentChange = (Intention, Bool) -> ()
 
 class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     private let keeper: TaskKeeper
@@ -17,7 +17,11 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         didSet {
             UIView.animateWithDuration(0.5) { () -> Void in
                 self.layout.intention = self.intent
-                self.intentionChanged?(self.intent)
+                if (self.focus?.wasCompletedToday()) != nil {
+                    self.intentionChanged?(self.intent, true)
+                } else {
+                    self.intentionChanged?(self.intent, false)
+                }
 
                 self.today.alpha = self.layout.taskDateAlpha
                 self.intention.alpha = self.layout.taskTextAlpha
@@ -90,14 +94,16 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
             intent = .Setting
 
         case .Setting:
+            keeper.saveNewTask(self.intention.text)
+
             self.space.backgroundColor = self.layout.placeholderColours.next()
             self.intention.text = self.layout.placeholderText.next()
-            keeper.saveNewTask(self.intention.text)
 
             flip()
         case .Doing:
+            keeper.complete(self.focus!)
+            self.intent = .Being
             flip()
-            // TODO: mark task as complete, peel away to show new condition
         }
     }
 

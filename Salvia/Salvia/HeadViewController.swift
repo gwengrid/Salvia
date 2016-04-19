@@ -38,8 +38,9 @@ class HeadViewController: UIViewController {
         self.addChildViewController(self.intentionSpace)
         self.view.addSubview(self.intentionSpace.view)
         self.intentionSpace.didMoveToParentViewController(self)
-        self.intentionSpace.intentionChanged = { (intent: Intention) in
+        self.intentionSpace.intentionChanged = { (intent: Intention, completed: Bool) in
             self.headstate = intent == Intention.Being ? Headstate.Empty : Headstate.Available
+            self.headstate = completed ? Headstate.Enough : self.headstate
         }
     }
 
