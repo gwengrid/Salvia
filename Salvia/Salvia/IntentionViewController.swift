@@ -35,6 +35,9 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
                     self.space.backgroundColor = self.layout.placeholderColours.array[0]
                 }
 
+                if self.intent == .Doing, let todaysFocus = self.focus {
+                    self.intention.text = todaysFocus.task
+                }
                 self.view.layoutIfNeeded()
             }
         }
@@ -84,6 +87,8 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         let dismiss = UITapGestureRecognizer(target:self, action: Selector("cancelAction:"))
         dismiss.delegate = self
         self.view.addGestureRecognizer(dismiss)
+
+        self.intent = self.focus != nil ? .Doing : .Being
     }
 
 
