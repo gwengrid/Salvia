@@ -49,6 +49,8 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
             self.intent = focus != nil ? .Doing : .Being
             if let todaysFocus = focus {
                 intention.text = todaysFocus.task
+            } else {
+                intention.text = ""
             }
         }
     }
@@ -88,11 +90,6 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         dismiss.delegate = self
         self.view.addGestureRecognizer(dismiss)
     }
-//
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        self.intent = self.focus != nil ? .Doing : .Setting
-//    }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -114,7 +111,7 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
             flip()
         case .Doing:
             keeper.complete(self.focus!)
-            self.intent = .Being
+            self.focus = nil
             flip()
         }
     }
