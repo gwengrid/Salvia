@@ -87,10 +87,17 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         let dismiss = UITapGestureRecognizer(target:self, action: Selector("cancelAction:"))
         dismiss.delegate = self
         self.view.addGestureRecognizer(dismiss)
+    }
+//
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        self.intent = self.focus != nil ? .Doing : .Setting
+//    }
 
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         self.intent = self.focus != nil ? .Doing : .Being
     }
-
 
     @IBAction func settingAction(sender: AnyObject) {
         switch (intent){

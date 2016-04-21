@@ -62,7 +62,7 @@
                                         <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="MM7-ci-Zls"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wY-S7-E4E">
+                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wY-S7-E4E">
                                     <rect key="frame" x="280" y="280" width="33" height="33"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="5jr-ax-x8N"/>
@@ -73,7 +73,9 @@
                                     <state key="normal" image="AddButton"/>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="5jr-ax-x8N"/>
                                             <exclude reference="EDX-7o-AcQ"/>
+                                            <exclude reference="Ihb-3v-yuW"/>
                                             <exclude reference="Www-g0-MeZ"/>
                                         </mask>
                                     </variation>
@@ -113,7 +115,9 @@
                                     <exclude reference="JhG-0V-iC9"/>
                                     <exclude reference="VBp-g3-yLf"/>
                                     <exclude reference="Jfe-7r-CJs"/>
+                                    <exclude reference="g0T-qw-fLQ"/>
                                     <exclude reference="j2i-hj-KXj"/>
+                                    <exclude reference="vG4-kR-zdR"/>
                                 </mask>
                             </variation>
                         </view>
