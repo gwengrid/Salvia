@@ -92,9 +92,11 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
     }
 
     var hackLoad: Bool?
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        self.intent = self.focus != nil ? .Doing : .Being
+    override func viewDidLayoutSubviews() {
+        if (hackLoad == nil) {
+            self.intent = self.focus != nil ? .Doing : .Being
+            hackLoad = true
+        }
     }
 
     @IBAction func settingAction(sender: AnyObject) {
