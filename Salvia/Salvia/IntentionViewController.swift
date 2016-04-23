@@ -91,6 +91,7 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         self.view.addGestureRecognizer(dismiss)
     }
 
+    var hackLoad: Bool?
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         self.intent = self.focus != nil ? .Doing : .Being
