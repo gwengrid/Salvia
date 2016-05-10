@@ -1,3 +1,4 @@
 use_frameworks!
 pod "SugarRecord/CoreData"
 pod "Colours/Swift"
+pod 'EasyAnimation'

@@ -12,6 +12,8 @@
 		1B0179601CBF12A7006A662C /* IntentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B01795E1CBF12A7006A662C /* IntentionViewController.swift */; };
 		1B0179611CBF12A7006A662C /* IntentionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B01795F1CBF12A7006A662C /* IntentionViewController.xib */; };
 		1B0179651CBF1833006A662C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0179641CBF1833006A662C /* Constants.swift */; };
+		1B13AC511CE1573300BFE9DC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B13AC4F1CE1573300BFE9DC /* OnboardingViewController.swift */; };
+		1B13AC521CE1573300BFE9DC /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B13AC501CE1573300BFE9DC /* OnboardingViewController.xib */; };
 		1B1E8A991CB457DC00D94961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E8A981CB457DC00D94961 /* Assets.xcassets */; };
 		1B2460A31C76A16A00BC8B78 /* Envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B2460A21C76A16A00BC8B78 /* Envelope.png */; };
 		1B6A36FA1CA9EBD900D4B299 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B6A36F81CA9EBD900D4B299 /* Montserrat-Bold.ttf */; };
@@ -55,20 +57,22 @@
 		1B01795E1CBF12A7006A662C /* IntentionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntentionViewController.swift; sourceTree = "<group>"; };
 		1B01795F1CBF12A7006A662C /* IntentionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntentionViewController.xib; sourceTree = "<group>"; };
 		1B0179641CBF1833006A662C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1B13AC4F1CE1573300BFE9DC /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		1B13AC501CE1573300BFE9DC /* OnboardingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		1B1E8A981CB457DC00D94961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B2460A21C76A16A00BC8B78 /* Envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Envelope.png; path = Assets/Envelope.png; sourceTree = "<group>"; };
 		1B6A36F81CA9EBD900D4B299 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		1B6A36F91CA9EBD900D4B299 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		1B70FB471C507A3800DD24EA /* Salvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Salvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B70FB471C507A3800DD24EA /* Presence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Presence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B70FB4F1C507A3800DD24EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B70FB521C507A3800DD24EA /* Salvia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Salvia.xcdatamodel; sourceTree = "<group>"; };
 		1B70FB571C507A3800DD24EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B70FB591C507A3800DD24EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B70FB5E1C507A3800DD24EA /* SalviaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B70FB5E1C507A3800DD24EA /* Presence.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Presence.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B70FB621C507A3800DD24EA /* SalviaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalviaTests.swift; sourceTree = "<group>"; };
 		1B70FB641C507A3800DD24EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B70FB691C507A3800DD24EA /* SalviaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SalviaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B70FB691C507A3800DD24EA /* Presence.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Presence.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B70FB6D1C507A3800DD24EA /* SalviaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalviaUITests.swift; sourceTree = "<group>"; };
 		1B70FB6F1C507A3800DD24EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B70FB7B1C51E24200DD24EA /* Salvia-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Salvia-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -136,9 +140,9 @@
 		1B70FB481C507A3800DD24EA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B70FB471C507A3800DD24EA /* Salvia.app */,
-				1B70FB5E1C507A3800DD24EA /* SalviaTests.xctest */,
-				1B70FB691C507A3800DD24EA /* SalviaUITests.xctest */,
+				1B70FB471C507A3800DD24EA /* Presence.app */,
+				1B70FB5E1C507A3800DD24EA /* Presence.xctest */,
+				1B70FB691C507A3800DD24EA /* Presence.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,6 +152,8 @@
 			children = (
 				1B6A36F71CA9EBC200D4B299 /* Resources */,
 				1B70FB4A1C507A3800DD24EA /* AppDelegate.swift */,
+				1B13AC4F1CE1573300BFE9DC /* OnboardingViewController.swift */,
+				1B13AC501CE1573300BFE9DC /* OnboardingViewController.xib */,
 				1B0179541CBF1106006A662C /* HeadViewController.swift */,
 				1B0179551CBF1106006A662C /* HeadViewController.xib */,
 				1BD4858B1C90DFBE00343A3F /* Headstate.swift */,
@@ -207,9 +213,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1B70FB461C507A3800DD24EA /* Salvia */ = {
+		1B70FB461C507A3800DD24EA /* Presence */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B70FB721C507A3800DD24EA /* Build configuration list for PBXNativeTarget "Salvia" */;
+			buildConfigurationList = 1B70FB721C507A3800DD24EA /* Build configuration list for PBXNativeTarget "Presence" */;
 			buildPhases = (
 				039CB131A538AA1EE715701F /* Check Pods Manifest.lock */,
 				1B70FB431C507A3800DD24EA /* Sources */,
@@ -222,14 +228,14 @@
 			);
 			dependencies = (
 			);
-			name = Salvia;
+			name = Presence;
 			productName = Salvia;
-			productReference = 1B70FB471C507A3800DD24EA /* Salvia.app */;
+			productReference = 1B70FB471C507A3800DD24EA /* Presence.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1B70FB5D1C507A3800DD24EA /* SalviaTests */ = {
+		1B70FB5D1C507A3800DD24EA /* PresenceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B70FB751C507A3800DD24EA /* Build configuration list for PBXNativeTarget "SalviaTests" */;
+			buildConfigurationList = 1B70FB751C507A3800DD24EA /* Build configuration list for PBXNativeTarget "PresenceTests" */;
 			buildPhases = (
 				1B70FB5A1C507A3800DD24EA /* Sources */,
 				1B70FB5B1C507A3800DD24EA /* Frameworks */,
@@ -240,14 +246,14 @@
 			dependencies = (
 				1B70FB601C507A3800DD24EA /* PBXTargetDependency */,
 			);
-			name = SalviaTests;
+			name = PresenceTests;
 			productName = SalviaTests;
-			productReference = 1B70FB5E1C507A3800DD24EA /* SalviaTests.xctest */;
+			productReference = 1B70FB5E1C507A3800DD24EA /* Presence.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1B70FB681C507A3800DD24EA /* SalviaUITests */ = {
+		1B70FB681C507A3800DD24EA /* PresenceUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B70FB781C507A3800DD24EA /* Build configuration list for PBXNativeTarget "SalviaUITests" */;
+			buildConfigurationList = 1B70FB781C507A3800DD24EA /* Build configuration list for PBXNativeTarget "PresenceUITests" */;
 			buildPhases = (
 				1B70FB651C507A3800DD24EA /* Sources */,
 				1B70FB661C507A3800DD24EA /* Frameworks */,
@@ -258,9 +264,9 @@
 			dependencies = (
 				1B70FB6B1C507A3800DD24EA /* PBXTargetDependency */,
 			);
-			name = SalviaUITests;
+			name = PresenceUITests;
 			productName = SalviaUITests;
-			productReference = 1B70FB691C507A3800DD24EA /* SalviaUITests.xctest */;
+			productReference = 1B70FB691C507A3800DD24EA /* Presence.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -287,7 +293,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1B70FB421C507A3800DD24EA /* Build configuration list for PBXProject "Salvia" */;
+			buildConfigurationList = 1B70FB421C507A3800DD24EA /* Build configuration list for PBXProject "Presence" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -300,9 +306,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1B70FB461C507A3800DD24EA /* Salvia */,
-				1B70FB5D1C507A3800DD24EA /* SalviaTests */,
-				1B70FB681C507A3800DD24EA /* SalviaUITests */,
+				1B70FB461C507A3800DD24EA /* Presence */,
+				1B70FB5D1C507A3800DD24EA /* PresenceTests */,
+				1B70FB681C507A3800DD24EA /* PresenceUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,6 +325,7 @@
 				1B6A36FA1CA9EBD900D4B299 /* Montserrat-Bold.ttf in Resources */,
 				1B1E8A991CB457DC00D94961 /* Assets.xcassets in Resources */,
 				1B70FB581C507A3800DD24EA /* LaunchScreen.storyboard in Resources */,
+				1B13AC521CE1573300BFE9DC /* OnboardingViewController.xib in Resources */,
 				1B70FB501C507A3800DD24EA /* Main.storyboard in Resources */,
 				1B0179611CBF12A7006A662C /* IntentionViewController.xib in Resources */,
 			);
@@ -400,6 +407,7 @@
 				1B70FB531C507A3800DD24EA /* Salvia.xcdatamodeld in Sources */,
 				1BA23BB31C6D59E200FF9059 /* Task+CoreDataProperties.swift in Sources */,
 				1B70FB4B1C507A3800DD24EA /* AppDelegate.swift in Sources */,
+				1B13AC511CE1573300BFE9DC /* OnboardingViewController.swift in Sources */,
 				1BA23BA61C6C73C400FF9059 /* TaskKeeper.swift in Sources */,
 				1B0179651CBF1833006A662C /* Constants.swift in Sources */,
 				1BD4858C1C90DFBE00343A3F /* Headstate.swift in Sources */,
@@ -428,12 +436,12 @@
 /* Begin PBXTargetDependency section */
 		1B70FB601C507A3800DD24EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1B70FB461C507A3800DD24EA /* Salvia */;
+			target = 1B70FB461C507A3800DD24EA /* Presence */;
 			targetProxy = 1B70FB5F1C507A3800DD24EA /* PBXContainerItemProxy */;
 		};
 		1B70FB6B1C507A3800DD24EA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1B70FB461C507A3800DD24EA /* Salvia */;
+			target = 1B70FB461C507A3800DD24EA /* Presence */;
 			targetProxy = 1B70FB6A1C507A3800DD24EA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -550,7 +558,7 @@
 				INFOPLIST_FILE = Salvia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glw.Salvia;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Presence;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Salvia-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -568,7 +576,7 @@
 				INFOPLIST_FILE = Salvia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glw.Salvia;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Presence;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Salvia-Bridging-Header.h";
 			};
@@ -581,8 +589,8 @@
 				INFOPLIST_FILE = SalviaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glw.SalviaTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Salvia.app/Salvia";
+				PRODUCT_NAME = Presence;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Presence.app/Presence";
 			};
 			name = Debug;
 		};
@@ -593,8 +601,8 @@
 				INFOPLIST_FILE = SalviaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glw.SalviaTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Salvia.app/Salvia";
+				PRODUCT_NAME = Presence;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Presence.app/Presence";
 			};
 			name = Release;
 		};
@@ -604,7 +612,7 @@
 				INFOPLIST_FILE = SalviaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glw.SalviaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Presence;
 				TEST_TARGET_NAME = Salvia;
 				USES_XCTRUNNER = YES;
 			};
@@ -616,7 +624,7 @@
 				INFOPLIST_FILE = SalviaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glw.SalviaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Presence;
 				TEST_TARGET_NAME = Salvia;
 				USES_XCTRUNNER = YES;
 			};
@@ -625,7 +633,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1B70FB421C507A3800DD24EA /* Build configuration list for PBXProject "Salvia" */ = {
+		1B70FB421C507A3800DD24EA /* Build configuration list for PBXProject "Presence" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B70FB701C507A3800DD24EA /* Debug */,
@@ -634,7 +642,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B70FB721C507A3800DD24EA /* Build configuration list for PBXNativeTarget "Salvia" */ = {
+		1B70FB721C507A3800DD24EA /* Build configuration list for PBXNativeTarget "Presence" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B70FB731C507A3800DD24EA /* Debug */,
@@ -643,7 +651,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B70FB751C507A3800DD24EA /* Build configuration list for PBXNativeTarget "SalviaTests" */ = {
+		1B70FB751C507A3800DD24EA /* Build configuration list for PBXNativeTarget "PresenceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B70FB761C507A3800DD24EA /* Debug */,
@@ -652,7 +660,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B70FB781C507A3800DD24EA /* Build configuration list for PBXNativeTarget "SalviaUITests" */ = {
+		1B70FB781C507A3800DD24EA /* Build configuration list for PBXNativeTarget "PresenceUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B70FB791C507A3800DD24EA /* Debug */,

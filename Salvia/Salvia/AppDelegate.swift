@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let intentionSpace = IntentionViewController(keeper: db)
         let headSpace = HeadViewController(intent: intentionSpace)
 
-        self.window?.rootViewController = headSpace
+        let onboardingSpace = OnboardingViewController()
+        self.window?.rootViewController = onboardingSpace
         self.window?.makeKeyAndVisible()
 
         return true

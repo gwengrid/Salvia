@@ -85,11 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods/Colours.framework"
+  install_framework "Pods/EasyAnimation.framework"
   install_framework "Pods/Result.framework"
   install_framework "Pods/SugarRecord.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods/Colours.framework"
+  install_framework "Pods/EasyAnimation.framework"
   install_framework "Pods/Result.framework"
   install_framework "Pods/SugarRecord.framework"
 fi

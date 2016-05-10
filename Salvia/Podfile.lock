@@ -1,15 +1,18 @@
 PODS:
   - Colours/Swift (5.13.0)
+  - EasyAnimation (1.0.5)
   - Result (1.0.2)
   - SugarRecord/CoreData (2.2.4):
     - Result (~> 1.0)
 
 DEPENDENCIES:
   - Colours/Swift
+  - EasyAnimation
   - SugarRecord/CoreData
 
 SPEC CHECKSUMS:
   Colours: f24220c38f13deac88612667e9b4a7fb96b871d4
+  EasyAnimation: 32821f37dd39187e7364369a3d8f65d38405cf1d
   Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
   SugarRecord: b3125da3183ff051f19187c050d79063621b3ff5
 
