@@ -84,7 +84,7 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         self.today.text = layout.taskDateText
         self.intention.delegate = self
 
-        let dismiss = UITapGestureRecognizer(target:self, action: Selector("cancelAction:"))
+        let dismiss = UITapGestureRecognizer(target:self, action: #selector(cancelAction))
         dismiss.delegate = self
         self.view.addGestureRecognizer(dismiss)
     }
@@ -124,7 +124,7 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
 
         self.intention.resignFirstResponder()
         focus = keeper.fetchNextInQueue()
-        self.intent = focus != nil ? .Doing : .Being
+        self.intent = self.focus == nil || focus?.wasCompletedToday() == true  ? .Being : .Doing
     }
 
     // MARK: uitextview delegate
