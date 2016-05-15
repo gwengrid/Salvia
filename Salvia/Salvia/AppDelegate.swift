@@ -17,10 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let db = TaskKeeper(db: coreDataStorage())
         let intentionSpace = IntentionViewController(keeper: db)
-        let headSpace = HeadViewController(intent: intentionSpace)
+        let headSpace = HeadViewController(intent: intentionSpace, keeper:db)
 
-        let onboardingSpace = OnboardingViewController()
-        self.window?.rootViewController = onboardingSpace
+        self.window?.rootViewController = headSpace
         self.window?.makeKeyAndVisible()
 
         return true

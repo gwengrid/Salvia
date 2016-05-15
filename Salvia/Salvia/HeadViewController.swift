@@ -10,20 +10,14 @@ import UIKit
 
 class HeadViewController: UIViewController {
 
-    @IBOutlet weak var happyFace: UIImageView!
     @IBOutlet weak var happyText: UILabel!
 
     private let intentionSpace: IntentionViewController
+    private let keeper: TaskKeeper
+
     var headstate: Headstate = .Empty {
         didSet {
-            self.intentionSpace.view.transform = headstate == .Available ? CGAffineTransformIdentity : CGAffineTransformMakeTranslation(0, 450)
-            let opacity: CGFloat = headstate == .Available ? 0 : 1
-
-            self.happyFace.image = headstate == .Enough ? UIImage(asset: .Congrats) : UIImage(asset: .Serene)
-            self.happyFace.alpha = opacity
-
-            self.happyText.text = headstate == .Enough ? "Enjoy the rest of your day!" : "Nothing to do today."
-            self.happyText.alpha = opacity
+            self.happyText.text = headstate == .Enough ? "You’ve done enough today, good job.  👏😊" : "Nothing in your list. 😌✨"
         }
     }
 
@@ -31,21 +25,35 @@ class HeadViewController: UIViewController {
         fatalError("There is nothing more beautiful than the way the ocean refuses to stop kissing th shoreline, no matter how many times it's sent away")
     }
 
-    required init(intent: IntentionViewController) {
+    required init(intent: IntentionViewController, keeper: TaskKeeper) {
         self.intentionSpace = intent
+        self.keeper = keeper
         super.init(nibName: nil, bundle: nil)
 
         self.addChildViewController(self.intentionSpace)
         self.view.addSubview(self.intentionSpace.view)
         self.intentionSpace.didMoveToParentViewController(self)
-        self.intentionSpace.intentionChanged = { (intent: Intention, completed: Bool) in
-            self.headstate = intent == Intention.Being ? Headstate.Empty : Headstate.Available
-            self.headstate = completed ? Headstate.Enough : self.headstate
+        
+        self.intentionSpace.intentionChanged = { (intent: Intention) in
+            self.intentionSpace.view.transform = intent == .Being ? CGAffineTransformMakeTranslation(0, 450) : CGAffineTransformIdentity
+            self.happyText.alpha = intent == .Being ? 1 : 0
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.headstate = intentionSpace.focus != nil ? .Available : .Empty
+        let task = keeper.fetchNextInQueue()
+        if task?.wasCompletedToday() == true {
+            self.headstate = .Enough
+        }
+        else if task == nil {
+            self.headstate = .Empty
+        }
+    }
+
+    override func viewDidAppear(animated: Bool) {
+//        let onboardingSpace = OnboardingViewController()
+//        onboardingSpace.modalTransitionStyle = .CrossDissolve
+//        self.presentViewController(onboardingSpace, animated: true, completion: nil)
     }
 }

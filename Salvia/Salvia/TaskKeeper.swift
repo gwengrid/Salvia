@@ -16,10 +16,6 @@ class TaskKeeper {
         self.db = db
     }
     
-    func context (){
-        
-    }
-
     func saveNewTask(description: String) {
         try! self.db.operation { (context, save) -> Void in
             let newTask: Task = try! context.create()
@@ -32,14 +28,6 @@ class TaskKeeper {
     }
 
     func fetchNextInQueue() -> Task? {
-        if let today = NSDate.today() {
-            let predicate: NSPredicate = NSPredicate(format: "completed == %@", today)
-            let completedToday: Task? = try! db.fetch(Request<Task>().filteredWith(predicate: predicate)).first
-            if completedToday != nil {
-                return nil
-            }
-        }
-
         let task = try! db.fetch(Request<Task>().sortedWith("dateCreated", ascending: false)).first
         return task
     }

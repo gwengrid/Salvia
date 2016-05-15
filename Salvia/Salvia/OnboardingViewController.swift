@@ -35,8 +35,12 @@ class OnboardingViewController: UIViewController {
             options: [], animations: {
                 self.onboardingView.alpha = 0
             }, completion: nil).animateWithDuration(0.8, animations: {
-                self.onboardingView.text = self.onboarding[self.index]
-                self.onboardingView.alpha = 1
+                if self.index == self.onboarding.count {
+                    self.navigationController?.popViewControllerAnimated(false)
+                } else {
+                    self.onboardingView.text = self.onboarding[self.index]
+                    self.onboardingView.alpha = 1
+                }
             })
     }
 }

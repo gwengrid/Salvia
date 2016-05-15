@@ -8,20 +8,28 @@
 
 import UIKit
 
-typealias IntentChange = (Intention, Bool) -> ()
+typealias IntentChange = (Intention) -> ()
 
 class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     private let keeper: TaskKeeper
     private var layout: Layout!
+    var focus: Task? {
+        didSet {
+            if focus == nil || focus?.wasCompletedToday() == true  {
+                intent = .Being
+                intention.text = ""
+            } else {
+                if let todaysFocus = focus?.task {
+                    intention.text = todaysFocus
+                }
+            }
+        }
+    }
     private var intent: Intention = .Being {
         didSet {
             UIView.animateWithDuration(0.5) { () -> Void in
                 self.layout.intention = self.intent
-                if (self.focus?.wasCompletedToday()) != nil {
-                    self.intentionChanged?(self.intent, true)
-                } else {
-                    self.intentionChanged?(self.intent, false)
-                }
+                self.intentionChanged?(self.intent)
 
                 self.today.alpha = self.layout.taskDateAlpha
                 self.intention.alpha = self.layout.taskTextAlpha
@@ -44,16 +52,6 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
     }
 
     var intentionChanged:(IntentChange)?
-    var focus: Task? {
-        didSet {
-            self.intent = focus != nil ? .Doing : .Being
-            if let todaysFocus = focus {
-                intention.text = todaysFocus.task
-            } else {
-                intention.text = ""
-            }
-        }
-    }
 
     @IBOutlet weak var settingButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
@@ -94,7 +92,7 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
     var hackLoad: Bool?
     override func viewDidLayoutSubviews() {
         if (hackLoad == nil) {
-            self.intent = self.focus != nil ? .Doing : .Being
+            self.intent = self.focus == nil || focus?.wasCompletedToday() == true  ? .Being : .Doing
             hackLoad = true
         }
     }
@@ -102,7 +100,7 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
     @IBAction func settingAction(sender: AnyObject) {
         switch (intent){
         case .Being:
-            intention.text = "What do you want to do?"
+            intention.text = "What do you need to do?"
             intent = .Setting
 
         case .Setting:

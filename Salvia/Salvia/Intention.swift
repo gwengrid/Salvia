@@ -80,7 +80,7 @@ struct Layout {
     }
 
     var placeholderText = Cycle(array: [
-        "What do you want to do?",
+        "What do you need to do?",
         "Anything else?",
         "What's next?",
         "You got this, keep it coming!",
