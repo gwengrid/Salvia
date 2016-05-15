@@ -79,25 +79,6 @@ struct Layout {
         return UIImage()
     }
 
-    var placeholderText = Cycle(array: [
-        "What do you need to do?",
-        "Anything else?",
-        "What's next?",
-        "You got this, keep it coming!",
-        "What else do you have?",
-        "Lots of presence coming up for you!",
-        "Awesome, do you have more?",
-        "Baller, want to add more? 🏀",
-        "Om nom nom nom. Delicious. Feed me. 🍇",
-        "Sweet, let's tackle this together.",
-        "Let's take on the world, you and me.",
-        "Hustling everyday 👊",
-        "I like that you're taking this one step a time.",
-        "Your life is so full of upcoming adventures! 🌱",
-        "Woo, give yourself some props!",
-        "I got your back, friend. 👯",
-        ]
-    )
     var placeholderColours = Cycle(array: [UIColor(hex:"FFE56F"), UIColor(hex: "6FF2FF"), UIColor(hex: "FF87FB"), UIColor(hex: "93FF6F")]
     )
 }

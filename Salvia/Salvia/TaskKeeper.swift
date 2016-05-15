@@ -29,6 +29,9 @@ class TaskKeeper {
 
     func fetchNextInQueue() -> Task? {
         let task = try! db.fetch(Request<Task>().sortedWith("dateCreated", ascending: false)).first
+        if task?.completed != nil && task?.wasCompletedToday() != true {
+            return nil
+        }
         return task
     }
 

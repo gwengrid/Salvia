@@ -107,7 +107,8 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
             keeper.saveNewTask(self.intention.text)
 
             self.space.backgroundColor = self.layout.placeholderColours.next()
-            self.intention.text = self.layout.placeholderText.next()
+            self.intention.text = ""
+            self.settingButton.enabled = !self.intention.text.isEmpty
 
             flip()
         case .Doing:
