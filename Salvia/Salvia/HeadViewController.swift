@@ -48,10 +48,6 @@ class HeadViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(refresh), name: NewIntentionNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(refresh), name: IntentFulfilledNotification, object: nil)
-
-//        let onboardingSpace = OnboardingViewController()
-//        onboardingSpace.modalTransitionStyle = .CrossDissolve
-//        self.presentViewController(onboardingSpace, animated: true, completion: nil)
     }
 
     override func viewWillDisappear(animated: Bool) {
