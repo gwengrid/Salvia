@@ -9,6 +9,9 @@
 import Foundation
 import SugarRecord
 
+let NewIntentionNotification = "com.gwendolyn.newintentset"
+let IntentFulfilledNotification = "com.gwendolyn.intentcompete"
+
 class TaskKeeper {
     var db: CoreDataDefaultStorage
     
@@ -24,6 +27,7 @@ class TaskKeeper {
                 newTask.dateCreated = date
             }
             save()
+            NSNotificationCenter.defaultCenter().postNotificationName(NewIntentionNotification, object: nil)
         }
     }
 
@@ -45,6 +49,7 @@ class TaskKeeper {
                 if let saved = fetched {
                     saved.completed = today
                     save()
+                    NSNotificationCenter.defaultCenter().postNotificationName(IntentFulfilledNotification, object: nil)
                 }
             }
 
