@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EasyAnimation
 
 typealias IntentChange = (Intention) -> ()
 
@@ -27,7 +28,28 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
     }
     private var intent: Intention = .Being {
         didSet {
-            UIView.animateWithDuration(0.5) { () -> Void in
+//            UIView.animateWithDuration(0.5) { () -> Void in
+//                self.layout.intention = self.intent
+//                self.intentionChanged?(self.intent)
+//
+//                self.today.alpha = self.layout.taskDateAlpha
+//                self.intention.alpha = self.layout.taskTextAlpha
+//                self.intention.editable = self.layout.taskTextEditable
+//
+//                self.cancelButton.alpha = self.layout.cancelButtonAlpha
+//                self.settingButton.setImage(self.layout.actionButtonImage, forState: .Normal)
+//                self.settingButton.enabled = self.intent == .Setting ? false : true
+//
+//                if self.intent != .Setting {
+//                    self.space.backgroundColor = self.layout.placeholderColours.array[0]
+//                }
+//
+//                if self.intent == .Doing, let todaysFocus = self.focus {
+//                    self.intention.text = todaysFocus.task
+//                }
+//                self.view.layoutIfNeeded()
+//            }
+            UIView.animateAndChainWithDuration(0.5, delay: 0, options: [], animations: {
                 self.layout.intention = self.intent
                 self.intentionChanged?(self.intent)
 
@@ -47,6 +69,8 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
                     self.intention.text = todaysFocus.task
                 }
                 self.view.layoutIfNeeded()
+                }, completion: nil).animateWithDuration(1.0) {
+                    self.space.alpha = 1 // hack
             }
         }
     }
