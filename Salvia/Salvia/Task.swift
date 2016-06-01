@@ -16,10 +16,8 @@ public class Task: NSManagedObject {
 
 extension Task {
     func wasCompletedToday () -> Bool {
-        if let today = NSDate.today() {
-            if let value = self.completed?.isEqualToDate(today){
-                return value
-            }
+        if let value = self.completed?.isEqualToDate(NSDate.today()){
+            return value
         }
         return false
     }

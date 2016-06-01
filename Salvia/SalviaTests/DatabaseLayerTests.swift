@@ -46,4 +46,41 @@ class DatabaseLayerTests: XCTestCase {
             XCTAssertNil(onlyTask.completed)
         }
     }
+
+    func testCompleteTask() {
+        var task = dbLayer.fetchNextInQueue()
+        XCTAssertNil(task)
+
+        let taskDescription = "sexypurple"
+        dbLayer.saveNewTask(taskDescription)
+
+        task = dbLayer.fetchNextInQueue()
+        XCTAssertNotNil(task)
+        dbLayer.complete(task!)
+
+        task = dbLayer.fetchNextInQueue()
+        XCTAssertTrue((task!.completed) != nil)
+    }
+
+    func testFetchNext() {
+        var task = dbLayer.fetchNextInQueue()
+        XCTAssertNil(task)
+
+        let firstTask = "sexypurple"
+        dbLayer.saveNewTask(firstTask)
+        task = dbLayer.fetchNextInQueue()
+        XCTAssertEqual(task!.task, firstTask)
+        XCTAssertNil(task!.completed)
+
+        dbLayer.complete(task!)
+        task = dbLayer.fetchNextInQueue()
+        XCTAssertEqual(task!.task, firstTask)
+        XCTAssertTrue((task!.completed) != nil)
+
+        let anotherTask = "sexygray"
+        dbLayer.saveNewTask(anotherTask)
+        task = dbLayer.fetchNextInQueue()
+        XCTAssertEqual(task!.task, firstTask)
+        XCTAssertTrue((task!.completed) != nil)
+    }
 }

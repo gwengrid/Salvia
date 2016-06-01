@@ -55,7 +55,7 @@ class HeadViewController: UIViewController {
     }
 
     func refresh() {
-        let task = keeper.fetchNextInQueue()
+        let task = keeper.fetchTask(NSDate.today())
         if task?.wasCompletedToday() == true {
             self.headstate = .Enough
         }

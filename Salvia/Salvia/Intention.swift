@@ -65,7 +65,7 @@ struct Layout {
         let formatter = NSDateFormatter()
         formatter.dateStyle = .MediumStyle
         formatter.timeStyle = .NoStyle
-        return formatter.stringFromDate(NSDate.today()!)
+        return formatter.stringFromDate(NSDate.today())
     }
 
     var cancelButtonAlpha: CGFloat {

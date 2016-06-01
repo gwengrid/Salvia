@@ -93,7 +93,7 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
 
     required init(keeper: TaskKeeper) {
         self.keeper = keeper
-        self.focus = keeper.fetchNextInQueue()
+        self.focus = keeper.fetchTask(NSDate.today())
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -148,7 +148,7 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         }
 
         self.intention.resignFirstResponder()
-        focus = keeper.fetchNextInQueue()
+        focus = keeper.fetchTask(NSDate.today())
         self.intent = self.focus == nil || focus?.wasCompletedToday() == true  ? .Being : .Doing
     }
 

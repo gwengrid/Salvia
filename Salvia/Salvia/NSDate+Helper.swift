@@ -16,13 +16,10 @@ extension NSDate {
         return Date.formatterShortDate.stringFromDate(self)
     }
 
-    class func today() -> NSDate? {
+    class func today() -> NSDate {
         let cal = NSCalendar.currentCalendar()
-        let componenets = cal.components([.Era, .Year, .Month, .Day], fromDate: NSDate())
-        if let today = cal.dateFromComponents(componenets) {
-            return today
-        }
-        return nil
+        let componenets = cal.components([.Year, .Month, .Day], fromDate:NSDate())
+        return cal.dateFromComponents(componenets)!
     }
 }
 

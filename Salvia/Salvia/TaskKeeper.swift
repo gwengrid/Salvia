@@ -23,21 +23,39 @@ class TaskKeeper {
         try! self.db.operation { (context, save) -> Void in
             let newTask: Task = try! context.create()
             newTask.task = description
-            if let date = NSDate.today() {
-                newTask.dateCreated = date
-            }
+            newTask.dateCreated = NSDate.today()
             save()
             NSNotificationCenter.defaultCenter().postNotificationName(NewIntentionNotification, object: nil)
         }
     }
 
-    func fetchNextInQueue() -> Task? {
-        let task = try! db.fetch(Request<Task>().sortedWith("dateCreated", ascending: false)).first
-        if task?.completed != nil && task?.wasCompletedToday() != true {
-            return nil
+    func fetchTask(forDate: NSDate) -> Task? {
+        let anyComplete: NSPredicate = NSPredicate(format: "completed == %@", forDate)
+        let result = try! db.fetch(Request<Task>().filteredWith(predicate: anyComplete)).first
+        if let completedTask = result {
+            return completedTask
         }
-        return task
+
+        return fetchNextAvailable()
     }
+
+    func fetchNextAvailable() -> Task? {
+        let anyAvailable: NSPredicate = NSPredicate(format: "completed == nil")
+        return try! db.fetch(Request<Task>().filteredWith(predicate: anyAvailable).sortedWith("dateCreated", ascending: false)).first
+    }
+
+    func fetchNextInQueue() -> Task? {
+
+        let anyComplete: NSPredicate = NSPredicate(format: "completed == %@", NSDate.today())
+        let result = try! db.fetch(Request<Task>().filteredWith(predicate: anyComplete)).first
+        if let completedTask = result {
+            return completedTask
+        }
+
+        let anyAvailable: NSPredicate = NSPredicate(format: "completed == nil")
+        return try! db.fetch(Request<Task>().filteredWith(predicate: anyAvailable).sortedWith("dateCreated", ascending: false)).first
+    }
+
 
     func complete(task: Task) {
 
@@ -45,13 +63,9 @@ class TaskKeeper {
             let predicate: NSPredicate = NSPredicate(format: "(SELF = %@)", task)
             let fetched: Task? = try! context.fetch(Request<Task>().filteredWith(predicate: predicate)).first
 
-            if let today = NSDate.today() {
-                if let saved = fetched {
-                    saved.completed = today
-                    save()
-                    NSNotificationCenter.defaultCenter().postNotificationName(IntentFulfilledNotification, object: nil)
-                }
-            }
+            fetched?.completed = NSDate.today()
+            save()
+            NSNotificationCenter.defaultCenter().postNotificationName(IntentFulfilledNotification, object: nil)
         }
     }
 }
