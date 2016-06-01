@@ -62,25 +62,32 @@ class DatabaseLayerTests: XCTestCase {
         XCTAssertTrue((task!.completed) != nil)
     }
 
-    func testFetchNext() {
-        var task = dbLayer.fetchNextInQueue()
+    func testFetchTask() {
+        let today = NSDate.today()
+        var task = dbLayer.fetchTask(today)
         XCTAssertNil(task)
 
         let firstTask = "sexypurple"
         dbLayer.saveNewTask(firstTask)
-        task = dbLayer.fetchNextInQueue()
+        task = dbLayer.fetchTask(today)
         XCTAssertEqual(task!.task, firstTask)
         XCTAssertNil(task!.completed)
 
         dbLayer.complete(task!)
-        task = dbLayer.fetchNextInQueue()
+        task = dbLayer.fetchTask(today)
         XCTAssertEqual(task!.task, firstTask)
-        XCTAssertTrue((task!.completed) != nil)
+        XCTAssertNotNil(task!.completed)
+        XCTAssertTrue(task!.completed == today)
+
+        let dayComponent = NSDateComponents()
+        dayComponent.day = 1
+        let cal = NSCalendar.currentCalendar()
+        let dayAfter = cal.dateByAddingComponents(dayComponent, toDate: today, options: [])!
 
         let anotherTask = "sexygray"
         dbLayer.saveNewTask(anotherTask)
-        task = dbLayer.fetchNextInQueue()
-        XCTAssertEqual(task!.task, firstTask)
-        XCTAssertTrue((task!.completed) != nil)
+        task = dbLayer.fetchTask(dayAfter)
+        XCTAssertEqual(task!.task, anotherTask)
+        XCTAssertNil(task!.completed)
     }
 }
