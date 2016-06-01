@@ -8,6 +8,7 @@
 
 import UIKit
 import SugarRecord
+import Amplitude_iOS
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         self.window?.rootViewController = headSpace
         self.window?.makeKeyAndVisible()
+
+        Amplitude.instance().initializeApiKey("a79617100fa1dfc49eaf2ce67bf1362c")
+        Amplitude.instance().logEvent("PurplePresenceAppOpened")
 
         return true
     }

@@ -2,3 +2,4 @@ use_frameworks!
 pod "SugarRecord/CoreData"
 pod "Colours/Swift"
 pod 'EasyAnimation'
+pod 'Amplitude-iOS', '~> 3.7.0'
