@@ -52,7 +52,6 @@ class TaskKeeper {
                     NSNotificationCenter.defaultCenter().postNotificationName(IntentFulfilledNotification, object: nil)
                 }
             }
-
         }
     }
 }

@@ -12,6 +12,7 @@
 		1B0179601CBF12A7006A662C /* IntentionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B01795E1CBF12A7006A662C /* IntentionViewController.swift */; };
 		1B0179611CBF12A7006A662C /* IntentionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B01795F1CBF12A7006A662C /* IntentionViewController.xib */; };
 		1B0179651CBF1833006A662C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0179641CBF1833006A662C /* Constants.swift */; };
+		1B08C6151CFD5C8600149BCC /* DatabaseLayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B08C6141CFD5C8600149BCC /* DatabaseLayerTests.swift */; };
 		1B1E8A991CB457DC00D94961 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B1E8A981CB457DC00D94961 /* Assets.xcassets */; };
 		1B2460A31C76A16A00BC8B78 /* Envelope.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B2460A21C76A16A00BC8B78 /* Envelope.png */; };
 		1B6A36FA1CA9EBD900D4B299 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1B6A36F81CA9EBD900D4B299 /* Montserrat-Bold.ttf */; };
@@ -55,6 +56,7 @@
 		1B01795E1CBF12A7006A662C /* IntentionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntentionViewController.swift; sourceTree = "<group>"; };
 		1B01795F1CBF12A7006A662C /* IntentionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntentionViewController.xib; sourceTree = "<group>"; };
 		1B0179641CBF1833006A662C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1B08C6141CFD5C8600149BCC /* DatabaseLayerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseLayerTests.swift; sourceTree = "<group>"; };
 		1B1E8A981CB457DC00D94961 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B2460A21C76A16A00BC8B78 /* Envelope.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Envelope.png; path = Assets/Envelope.png; sourceTree = "<group>"; };
 		1B6A36F81CA9EBD900D4B299 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -65,7 +67,7 @@
 		1B70FB521C507A3800DD24EA /* Salvia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Salvia.xcdatamodel; sourceTree = "<group>"; };
 		1B70FB571C507A3800DD24EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B70FB591C507A3800DD24EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B70FB5E1C507A3800DD24EA /* Presence.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Presence.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B70FB5E1C507A3800DD24EA /* PresenceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PresenceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B70FB621C507A3800DD24EA /* SalviaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalviaTests.swift; sourceTree = "<group>"; };
 		1B70FB641C507A3800DD24EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B70FB691C507A3800DD24EA /* Presence.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Presence.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				1B70FB471C507A3800DD24EA /* Presence.app */,
-				1B70FB5E1C507A3800DD24EA /* Presence.xctest */,
+				1B70FB5E1C507A3800DD24EA /* PresenceTests.xctest */,
 				1B70FB691C507A3800DD24EA /* Presence.xctest */,
 			);
 			name = Products;
@@ -174,6 +176,7 @@
 			children = (
 				1B70FB621C507A3800DD24EA /* SalviaTests.swift */,
 				1B70FB641C507A3800DD24EA /* Info.plist */,
+				1B08C6141CFD5C8600149BCC /* DatabaseLayerTests.swift */,
 			);
 			path = SalviaTests;
 			sourceTree = "<group>";
@@ -242,7 +245,7 @@
 			);
 			name = PresenceTests;
 			productName = SalviaTests;
-			productReference = 1B70FB5E1C507A3800DD24EA /* Presence.xctest */;
+			productReference = 1B70FB5E1C507A3800DD24EA /* PresenceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		1B70FB681C507A3800DD24EA /* PresenceUITests */ = {
@@ -411,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B08C6151CFD5C8600149BCC /* DatabaseLayerTests.swift in Sources */,
 				1B70FB631C507A3800DD24EA /* SalviaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -581,7 +585,7 @@
 				INFOPLIST_FILE = SalviaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glw.SalviaTests;
-				PRODUCT_NAME = Presence;
+				PRODUCT_NAME = PresenceTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Presence.app/Presence";
 			};
 			name = Debug;
@@ -593,7 +597,7 @@
 				INFOPLIST_FILE = SalviaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glw.SalviaTests;
-				PRODUCT_NAME = Presence;
+				PRODUCT_NAME = PresenceTests;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Presence.app/Presence";
 			};
 			name = Release;
