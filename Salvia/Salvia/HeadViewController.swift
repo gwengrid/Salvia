@@ -33,10 +33,12 @@ class HeadViewController: UIViewController {
         self.addChildViewController(self.intentionSpace)
         self.view.addSubview(self.intentionSpace.view)
         self.intentionSpace.didMoveToParentViewController(self)
-        
+
+        let height = UIScreen.mainScreen().bounds.size.height
         self.intentionSpace.intentionChanged = { (intent: Intention) in
-            self.intentionSpace.view.transform = intent == .Being ? CGAffineTransformMakeTranslation(0, 450) : CGAffineTransformIdentity
+            self.intentionSpace.view.transform = intent == .Being ? CGAffineTransformMakeTranslation(0, height) : CGAffineTransformIdentity
             self.happyText.alpha = intent == .Being ? 1 : 0
+
         }
     }
 

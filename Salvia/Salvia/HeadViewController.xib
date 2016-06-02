@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Montserrat-Regular.ttf">
@@ -21,20 +22,39 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="N0J-SH-UGg">
-                    <rect key="frame" x="197" y="287" width="207" height="25"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="N0J-SH-UGg">
+                    <rect key="frame" x="30" y="287" width="540" height="25"/>
                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
                     <color key="textColor" red="0.51372549020000002" green="0.47450980390000003" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxL-0k-IJm">
+                    <rect key="frame" x="273" y="530" width="54" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="Xcp-4n-HNq"/>
+                        <constraint firstAttribute="width" constant="54" id="fR3-q6-RvI"/>
+                        <constraint firstAttribute="width" secondItem="OxL-0k-IJm" secondAttribute="height" multiplier="27:26" id="onW-8b-PPY"/>
+                    </constraints>
+                    <state key="normal" image="InputModeButton"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="onW-8b-PPY"/>
+                        </mask>
+                    </variation>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="N0J-SH-UGg" secondAttribute="trailing" constant="30" id="610-MK-euk"/>
                 <constraint firstItem="N0J-SH-UGg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8Od-Dk-VLE"/>
                 <constraint firstItem="N0J-SH-UGg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="AWR-Ul-EKR"/>
+                <constraint firstAttribute="bottom" secondItem="OxL-0k-IJm" secondAttribute="bottom" constant="16" id="NOk-Fh-Tjn"/>
+                <constraint firstItem="OxL-0k-IJm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Uu3-6S-UQE"/>
                 <constraint firstItem="N0J-SH-UGg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="nSp-ND-We4"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="InputModeButton" width="59" height="59"/>
+    </resources>
 </document>
