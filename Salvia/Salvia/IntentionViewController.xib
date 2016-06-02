@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Montserrat-Regular.ttf">
@@ -20,10 +19,6 @@
                 <outlet property="space" destination="Yhd-zA-xLi" id="SHn-hD-CZd"/>
                 <outlet property="today" destination="F6l-Ah-apP" id="oVP-wc-NHY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outletCollection property="beingLayout" destination="g0T-qw-fLQ" collectionClass="NSMutableArray" id="fOM-d1-WBu"/>
-                <outletCollection property="beingLayout" destination="vG4-kR-zdR" collectionClass="NSMutableArray" id="lDm-qa-Dtg"/>
-                <outletCollection property="beingLayout" destination="5jr-ax-x8N" collectionClass="NSMutableArray" id="0V7-3M-ciF"/>
-                <outletCollection property="beingLayout" destination="Ihb-3v-yuW" collectionClass="NSMutableArray" id="LRE-3B-VJh"/>
                 <outletCollection property="settingLayout" destination="Jfe-7r-CJs" collectionClass="NSMutableArray" id="7cs-Px-3Sa"/>
                 <outletCollection property="settingLayout" destination="j2i-hj-KXj" collectionClass="NSMutableArray" id="X3U-fx-NnZ"/>
                 <outletCollection property="settingLayout" destination="EDX-7o-AcQ" collectionClass="NSMutableArray" id="ajR-er-vTU"/>
@@ -48,7 +43,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flT-P0-Sya">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-zA-xLi">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yhd-zA-xLi">
                             <rect key="frame" x="140" y="140" width="321" height="321"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dV3-5v-Fmf">
@@ -62,29 +57,19 @@
                                         <action selector="cancelAction:" destination="-1" eventType="touchUpInside" id="MM7-ci-Zls"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wY-S7-E4E">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wY-S7-E4E">
                                     <rect key="frame" x="280" y="280" width="33" height="33"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="44" id="5jr-ax-x8N"/>
                                         <constraint firstAttribute="height" constant="33" id="EDX-7o-AcQ"/>
-                                        <constraint firstAttribute="width" constant="44" id="Ihb-3v-yuW"/>
                                         <constraint firstAttribute="width" constant="33" id="Www-g0-MeZ"/>
                                     </constraints>
                                     <state key="normal" image="AddButton"/>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="5jr-ax-x8N"/>
-                                            <exclude reference="EDX-7o-AcQ"/>
-                                            <exclude reference="Ihb-3v-yuW"/>
-                                            <exclude reference="Www-g0-MeZ"/>
-                                        </mask>
-                                    </variation>
                                     <connections>
                                         <action selector="settingAction:" destination="-1" eventType="touchUpInside" id="MPp-Rd-TxI"/>
                                     </connections>
                                 </button>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" misplaced="YES" text="What do you want to do?" translatesAutoresizingMaskIntoConstraints="NO" id="JN3-hH-Tti">
-                                    <rect key="frame" x="24" y="27" width="262" height="212"/>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="What do you want to do?" translatesAutoresizingMaskIntoConstraints="NO" id="JN3-hH-Tti">
+                                    <rect key="frame" x="20" y="27" width="281" height="212"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="212" id="1yc-f1-oKl"/>
                                     </constraints>
@@ -104,20 +89,14 @@
                                 <constraint firstAttribute="bottom" secondItem="dV3-5v-Fmf" secondAttribute="bottom" constant="3" id="L0z-bo-JGR"/>
                                 <constraint firstAttribute="height" constant="340" id="VBp-g3-yLf"/>
                                 <constraint firstItem="dV3-5v-Fmf" firstAttribute="leading" secondItem="Yhd-zA-xLi" secondAttribute="leading" constant="3" id="cdx-gc-MLS"/>
-                                <constraint firstItem="9wY-S7-E4E" firstAttribute="centerX" secondItem="Yhd-zA-xLi" secondAttribute="centerX" id="g0T-qw-fLQ"/>
                                 <constraint firstAttribute="bottom" secondItem="9wY-S7-E4E" secondAttribute="bottom" constant="8" id="j2i-hj-KXj"/>
                                 <constraint firstAttribute="width" constant="321" id="ngh-i7-qm8"/>
                                 <constraint firstAttribute="height" constant="321" id="pxC-x2-UOO"/>
-                                <constraint firstItem="9wY-S7-E4E" firstAttribute="centerY" secondItem="Yhd-zA-xLi" secondAttribute="top" id="vG4-kR-zdR"/>
                             </constraints>
                             <variation key="default">
                                 <mask key="constraints">
                                     <exclude reference="JhG-0V-iC9"/>
                                     <exclude reference="VBp-g3-yLf"/>
-                                    <exclude reference="Jfe-7r-CJs"/>
-                                    <exclude reference="g0T-qw-fLQ"/>
-                                    <exclude reference="j2i-hj-KXj"/>
-                                    <exclude reference="vG4-kR-zdR"/>
                                 </mask>
                             </variation>
                         </view>
@@ -132,6 +111,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="Yhd-zA-xLi" firstAttribute="centerX" secondItem="flT-P0-Sya" secondAttribute="centerX" id="DGH-Qu-d5n"/>
                         <constraint firstItem="Yhd-zA-xLi" firstAttribute="top" secondItem="F6l-Ah-apP" secondAttribute="bottom" constant="46" id="I4N-yB-xHr"/>

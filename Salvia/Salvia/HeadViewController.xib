@@ -41,6 +41,9 @@
                             <exclude reference="onW-8b-PPY"/>
                         </mask>
                     </variation>
+                    <connections>
+                        <action selector="showInputMode:" destination="-1" eventType="touchUpInside" id="ulV-Qo-7wA"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

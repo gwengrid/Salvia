@@ -11,11 +11,9 @@ import Colours
 
 
 enum Intention {
-    case Being
     case Setting
     case Doing
 }
-
 
 struct Layout {
     var intention: Intention {
@@ -27,21 +25,17 @@ struct Layout {
         }
     }
 
-    let being: [NSLayoutConstraint]
     let setting: [NSLayoutConstraint]
     let doing: [NSLayoutConstraint]
 
-    init(intention:Intention, being: [NSLayoutConstraint], setting: [NSLayoutConstraint], doing: [NSLayoutConstraint]) {
+    init(intention:Intention, setting: [NSLayoutConstraint], doing: [NSLayoutConstraint]) {
         self.intention = intention
-        self.being = being
         self.setting = setting
         self.doing = doing
     }
 
     var definingConstraints: [NSLayoutConstraint] {
         switch intention {
-        case .Being:
-            return being
         case .Setting:
             return setting
         case .Doing:
@@ -49,10 +43,6 @@ struct Layout {
         }
     }
     
-    var taskTextAlpha: CGFloat {
-        return intention == .Being ? 0 : 1
-    }
-
     var taskTextEditable: Bool {
         return intention == .Setting ? true : false
     }
