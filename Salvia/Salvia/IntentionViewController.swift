@@ -75,10 +75,6 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         if intent == .Setting {
             self.intention.text = "What's your next step?"
         }
-
-        let dismiss = UITapGestureRecognizer(target:self, action: #selector(cancelAction))
-        dismiss.delegate = self
-        self.view.addGestureRecognizer(dismiss)
     }
 
     @IBAction func settingAction(sender: AnyObject) {
@@ -124,15 +120,6 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
 
     func textViewDidChange(textView: UITextView) {
         self.settingButton.enabled = !textView.text.isEmpty
-    }
-
-    // MARK: gesture delegate
-
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        if (CGRectContainsPoint(self.space.frame, touch.locationInView(self.space))) {
-            return false
-        }
-        return true
     }
 }
 
