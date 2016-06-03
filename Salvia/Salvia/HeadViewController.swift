@@ -62,7 +62,6 @@ class HeadViewController: UIViewController {
     }
 
     @IBAction func showInputMode(sender: AnyObject) {
-        intentionSpace.modalTransitionStyle = .CoverVertical
         self.presentViewController(intentionSpace, animated: true, completion: nil)
     }
 }
