@@ -49,6 +49,9 @@ class HeadViewController: UIViewController {
         let task = keeper.fetchTask(NSDate.today())
         let taskAvailable = task != nil && task?.wasCompletedToday() != true
 
+        if taskAvailable {
+            self.presentViewController(intentionSpace, animated: true, completion: nil)
+        }
     }
 
     func refresh() {
