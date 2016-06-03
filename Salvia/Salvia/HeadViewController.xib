@@ -42,7 +42,7 @@
                         </mask>
                     </variation>
                     <connections>
-                        <action selector="showInputMode:" destination="-1" eventType="touchUpInside" id="ulV-Qo-7wA"/>
+                        <action selector="showInputMode" destination="-1" eventType="touchUpInside" id="lNi-bp-v9O"/>
                     </connections>
                 </button>
             </subviews>

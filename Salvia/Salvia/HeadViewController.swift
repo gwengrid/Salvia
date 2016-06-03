@@ -12,31 +12,23 @@ class HeadViewController: UIViewController {
 
     @IBOutlet weak var happyText: UILabel!
 
-    private let intentionSpace: IntentionViewController
     private let keeper: TaskKeeper
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("There is nothing more beautiful than the way the ocean refuses to stop kissing th shoreline, no matter how many times it's sent away")
     }
 
-    required init(intent: IntentionViewController, keeper: TaskKeeper) {
-        self.intentionSpace = intent
+    required init(keeper: TaskKeeper) {
         self.keeper = keeper
         super.init(nibName: nil, bundle: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        refresh()
     }
 
     override func viewWillAppear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(refresh), name: NewIntentionNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(refresh), name: IntentFulfilledNotification, object: nil)
-    }
-
-    override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        refresh()
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -44,7 +36,7 @@ class HeadViewController: UIViewController {
         let taskAvailable = task != nil && task?.wasCompletedToday() != true
 
         if taskAvailable {
-            self.presentViewController(intentionSpace, animated: true, completion: nil)
+            showInputMode()
         }
     }
 
@@ -60,7 +52,9 @@ class HeadViewController: UIViewController {
         }
     }
 
-    @IBAction func showInputMode(sender: AnyObject) {
+    @IBAction func showInputMode() {
+        let intentionSpace = IntentionViewController(keeper: keeper)
+        intentionSpace.modalTransitionStyle = .CoverVertical
         self.presentViewController(intentionSpace, animated: true, completion: nil)
     }
 }

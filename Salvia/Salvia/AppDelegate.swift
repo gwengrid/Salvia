@@ -17,10 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let db = TaskKeeper(db: coreDataStorage())
-        let intentionSpace = IntentionViewController(keeper: db)
-        intentionSpace.modalTransitionStyle = .CoverVertical
-        
-        let headSpace = HeadViewController(intent: intentionSpace, keeper:db)
+
+        let headSpace = HeadViewController(keeper:db)
 
         self.window?.rootViewController = headSpace
         self.window?.makeKeyAndVisible()
