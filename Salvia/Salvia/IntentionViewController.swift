@@ -11,7 +11,6 @@ import EasyAnimation
 
 class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRecognizerDelegate {
     private let keeper: TaskKeeper
-    private var layout: Layout!
     var focus: Task? {
         didSet {
             if let todaysFocus = focus?.task {
@@ -21,23 +20,12 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         }
     }
     private var intent: Intention = .Setting {
+        willSet {
+            NSLayoutConstraint.deactivateConstraints(definingConstraints(intent))
+        }
         didSet {
-            UIView.animateWithDuration(0.5) { () -> Void in
-                self.layout.intention = self.intent
-
-                self.today.alpha = self.layout.taskDateAlpha
-                self.intention.editable = self.layout.taskTextEditable
-
-                self.cancelButton.alpha = self.layout.cancelButtonAlpha
-                self.settingButton.setImage(self.layout.actionButtonImage, forState: .Normal)
-                self.settingButton.enabled = self.intent == .Setting ? false : true
-
-
-                if self.intent == .Doing, let todaysFocus = self.focus {
-                    self.intention.text = todaysFocus.task
-                }
-                self.view.layoutIfNeeded()
-            }
+            NSLayoutConstraint.activateConstraints(definingConstraints(intent))
+            self.format(intent)
         }
     }
 
@@ -57,18 +45,18 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
     required init(keeper: TaskKeeper) {
         self.keeper = keeper
         self.focus = keeper.fetchTask(NSDate.today())
+        self.intent = self.focus != nil ? .Doing : .Setting
         super.init(nibName: nil, bundle: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        layout = Layout(intention:intent,
-            setting:settingLayout,
-            doing:doingLayout)
-
-        self.today.text = layout.taskDateText
+        // view initilization
+        self.today.text = Layout.taskDateText()
         self.intention.delegate = self
+
+        self.format(self.intent)
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -78,6 +66,31 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         self.settingButton.enabled = self.intent == .Setting ? false : true
     }
 
+    func definingConstraints(intention: Intention) -> [NSLayoutConstraint] {
+        switch intention {
+        case .Setting:
+            return settingLayout
+        case .Doing:
+            return doingLayout
+        }
+    }
+
+    func format(intention:Intention) {
+        UIView.animateWithDuration(0.5) { () -> Void in
+
+            self.today.alpha = Layout.taskDateAlpha(self.intent)
+            self.intention.editable = Layout.taskTextEditable(self.intent)
+            self.cancelButton.alpha = Layout.cancelButtonAlpha(self.intent)
+            self.settingButton.setImage(Layout.actionButtonImage(self.intent), forState: .Normal)
+            self.settingButton.enabled = self.intent == .Setting ? false : true
+
+            if self.intent == .Doing, let todaysFocus = self.focus {
+                self.intention.text = todaysFocus.task
+            }
+            self.view.layoutIfNeeded()
+        }
+    }
+
     @IBAction func settingAction(sender: AnyObject) {
         switch (intent){
         case .Setting:
@@ -85,7 +98,6 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
 
             self.intention.text = ""
             self.settingButton.enabled = false
-
             UIView.transitionWithView(self.space, duration: 0.5, options: [.TransitionCurlUp], animations: nil, completion: nil)
 
         case .Doing:

@@ -15,54 +15,27 @@ enum Intention {
     case Doing
 }
 
-struct Layout {
-    var intention: Intention {
-        willSet {
-            NSLayoutConstraint.deactivateConstraints(definingConstraints)
-        }
-        didSet {
-            NSLayoutConstraint.activateConstraints(definingConstraints)
-        }
-    }
-
-    let setting: [NSLayoutConstraint]
-    let doing: [NSLayoutConstraint]
-
-    init(intention:Intention, setting: [NSLayoutConstraint], doing: [NSLayoutConstraint]) {
-        self.intention = intention
-        self.setting = setting
-        self.doing = doing
-    }
-
-    var definingConstraints: [NSLayoutConstraint] {
-        switch intention {
-        case .Setting:
-            return setting
-        case .Doing:
-            return doing
-        }
-    }
-    
-    var taskTextEditable: Bool {
+struct Layout {    
+    static func taskTextEditable(intention: Intention) -> Bool {
         return intention == .Setting ? true : false
     }
 
-    var taskDateAlpha: CGFloat {
+    static func taskDateAlpha(intention: Intention) -> CGFloat {
         return intention == .Doing ? 1 : 0
     }
 
-    var taskDateText: String {
+    static func taskDateText() -> String {
         let formatter = NSDateFormatter()
         formatter.dateStyle = .MediumStyle
         formatter.timeStyle = .NoStyle
         return formatter.stringFromDate(NSDate.today())
     }
 
-    var cancelButtonAlpha: CGFloat {
+    static func cancelButtonAlpha(intention: Intention) -> CGFloat {
         return intention == .Setting ? 1 : 0
     }
 
-    var actionButtonImage: UIImage {
+    static func actionButtonImage(intention: Intention) -> UIImage {
         if let image = intention == .Doing ? UIImage(named: "CheckButton") : UIImage(named: "AddButton") {
             return image
         }
