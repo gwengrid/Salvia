@@ -15,6 +15,7 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
     var focus: Task? {
         didSet {
             if let todaysFocus = focus?.task {
+                self.intent = .Doing
                 intention.text = todaysFocus
             }
         }
@@ -72,9 +73,13 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
 
         self.today.text = layout.taskDateText
         self.intention.delegate = self
+    }
+
+    override func viewWillAppear(animated: Bool) {
         if intent == .Setting {
             self.intention.text = "What's your next step?"
         }
+        self.settingButton.enabled = self.intent == .Setting ? false : true
     }
 
     @IBAction func settingAction(sender: AnyObject) {
@@ -84,13 +89,17 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
 
             self.space.backgroundColor = self.layout.placeholderColours.next()
             self.intention.text = ""
-            self.settingButton.enabled = !self.intention.text.isEmpty
+            self.settingButton.enabled = false
 
-            flip()
+            UIView.transitionWithView(self.space, duration: 0.5, options: [.TransitionCurlUp], animations: nil, completion: nil)
+
         case .Doing:
             keeper.complete(self.focus!)
-            self.focus = nil
-            flip()
+            UIView.transitionWithView(self.space, duration: 0.5, options: [.TransitionCurlUp], animations: { 
+                self.intention.text = ""
+                }, completion: { (flag) in
+                    self.dismissViewControllerAnimated(true, completion: nil)
+            })
         }
     }
 
@@ -100,7 +109,13 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         }
 
         self.intention.resignFirstResponder()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let possibleNewTask = keeper.fetchTask(NSDate.today())
+
+        if let focus = possibleNewTask {
+            self.focus = focus
+        } else {
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
     }
 
     // MARK: uitextview delegate
@@ -120,14 +135,5 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
 
     func textViewDidChange(textView: UITextView) {
         self.settingButton.enabled = !textView.text.isEmpty
-    }
-}
-
-extension IntentionViewController {
-    func flip() {
-        UIView.beginAnimations("Flip", context: nil)
-        UIView.setAnimationDuration(0.5)
-        UIView.setAnimationTransition(.CurlUp, forView: self.space, cache: true)
-        UIView.commitAnimations()
     }
 }
