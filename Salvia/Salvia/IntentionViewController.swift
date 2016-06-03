@@ -44,7 +44,8 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
 
     required init(keeper: TaskKeeper) {
         self.keeper = keeper
-        self.focus = keeper.fetchTask(NSDate.today())
+        let task = keeper.fetchTask(NSDate.today())
+        self.focus = task?.wasCompletedToday() == true ? nil : task
         self.intent = self.focus != nil ? .Doing : .Setting
         super.init(nibName: nil, bundle: nil)
     }
@@ -118,8 +119,8 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         self.intention.resignFirstResponder()
         let possibleNewTask = keeper.fetchTask(NSDate.today())
 
-        if let focus = possibleNewTask {
-            self.focus = focus
+        if possibleNewTask != nil && possibleNewTask?.wasCompletedToday() != true {
+            self.focus = possibleNewTask
         } else {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
