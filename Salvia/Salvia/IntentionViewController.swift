@@ -32,9 +32,6 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
                 self.settingButton.setImage(self.layout.actionButtonImage, forState: .Normal)
                 self.settingButton.enabled = self.intent == .Setting ? false : true
 
-                if self.intent != .Setting {
-                    self.space.backgroundColor = self.layout.placeholderColours.array[0]
-                }
 
                 if self.intent == .Doing, let todaysFocus = self.focus {
                     self.intention.text = todaysFocus.task
@@ -86,7 +83,6 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
         case .Setting:
             keeper.saveNewTask(self.intention.text)
 
-            self.space.backgroundColor = self.layout.placeholderColours.next()
             self.intention.text = ""
             self.settingButton.enabled = false
 

@@ -68,27 +68,6 @@ struct Layout {
         }
         return UIImage()
     }
-
-    var placeholderColours = Cycle(array: [UIColor(hex:"FFE56F"), UIColor(hex: "6FF2FF"), UIColor(hex: "FF87FB"), UIColor(hex: "93FF6F")]
-    )
 }
-
-struct Cycle<T> {
-    let array: Array<T>
-    var index: Int
-
-    init(array:Array<T>) {
-        self.array = array
-        self.index = 0
-    }
-
-    mutating func next() -> T {
-        if ++index == array.endIndex {
-            index = 0
-        }
-        return self.array[index] as T
-    }
-}
-
 
 
