@@ -15,12 +15,6 @@ class HeadViewController: UIViewController {
     private let intentionSpace: IntentionViewController
     private let keeper: TaskKeeper
 
-    var headstate: Headstate = .Empty {
-        didSet {
-            self.happyText.text = headstate == .Enough ? "You’ve done enough today, good job.  👏😊" : "Nothing in your list. 😌✨"
-        }
-    }
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("There is nothing more beautiful than the way the ocean refuses to stop kissing th shoreline, no matter how many times it's sent away")
     }
@@ -57,10 +51,12 @@ class HeadViewController: UIViewController {
     func refresh() {
         let task = keeper.fetchTask(NSDate.today())
         if task?.wasCompletedToday() == true {
-            self.headstate = .Enough
+            self.happyText.text = "You’ve done enough today, good job.  👏😊"
         }
         else if task == nil {
-            self.headstate = .Empty
+            self.happyText.text = "Nothing in your list. 😌✨"
+        } else {
+            self.happyText.text = ""
         }
     }
 
