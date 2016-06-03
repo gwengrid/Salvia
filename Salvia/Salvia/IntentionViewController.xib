@@ -27,9 +27,7 @@
                 <outletCollection property="doingLayout" destination="JhG-0V-iC9" collectionClass="NSMutableArray" id="NOr-Yg-R9T"/>
                 <outletCollection property="doingLayout" destination="Jfe-7r-CJs" collectionClass="NSMutableArray" id="lLO-6v-n7o"/>
                 <outletCollection property="doingLayout" destination="j2i-hj-KXj" collectionClass="NSMutableArray" id="FLX-Ds-hC2"/>
-                <outletCollection property="beingLayout" destination="ngh-i7-qm8" collectionClass="NSMutableArray" id="j4c-pb-w3G"/>
                 <outletCollection property="settingLayout" destination="ngh-i7-qm8" collectionClass="NSMutableArray" id="Wcj-LW-NZO"/>
-                <outletCollection property="beingLayout" destination="pxC-x2-UOO" collectionClass="NSMutableArray" id="Xc5-HI-cdB"/>
                 <outletCollection property="settingLayout" destination="pxC-x2-UOO" collectionClass="NSMutableArray" id="jWM-fx-X8A"/>
                 <outletCollection property="doingLayout" destination="EDX-7o-AcQ" collectionClass="NSMutableArray" id="CIb-5R-LnF"/>
                 <outletCollection property="doingLayout" destination="Www-g0-MeZ" collectionClass="NSMutableArray" id="f6Z-tS-dpd"/>

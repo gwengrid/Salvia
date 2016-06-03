@@ -50,7 +50,6 @@ class IntentionViewController: UIViewController, UITextViewDelegate, UIGestureRe
     @IBOutlet weak var today: UILabel!
     @IBOutlet weak var intention: UITextView!
 
-    @IBOutlet var beingLayout: [NSLayoutConstraint]!
     @IBOutlet var settingLayout: [NSLayoutConstraint]!
     @IBOutlet var doingLayout: [NSLayoutConstraint]!
 
