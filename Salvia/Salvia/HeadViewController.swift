@@ -45,6 +45,12 @@ class HeadViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
+    override func viewDidAppear(animated: Bool) {
+        let task = keeper.fetchTask(NSDate.today())
+        let taskAvailable = task != nil && task?.wasCompletedToday() != true
+
+    }
+
     func refresh() {
         let task = keeper.fetchTask(NSDate.today())
         if task?.wasCompletedToday() == true {
